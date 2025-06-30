@@ -1,0 +1,118 @@
+/* リミックスアイコン用モンキーパッチ */
+:where([class^="ri-"])::before { content: "\f3c2"; }
+
+/* ベース */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ヒーロー */
+.hero-section {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.hero-overlay {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.85) 50%,
+    rgba(255,255,255,0.3) 100%);
+}
+
+/* フローティングCTA */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* フォーカス時 */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+/* カスタムチェックボックス */
+.custom-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #0066cc;
+  border-color: #0066cc;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* スイッチトグル */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #0066cc;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
