@@ -1,12 +1,7 @@
-// Tailwind CSS のカスタム設定
-window.tailwind = window.tailwind || {};
 tailwind.config = {
   theme: {
     extend: {
-      colors: {
-        primary: "#0066cc",
-        secondary: "#ff6600"
-      },
+      colors: { primary: "#0066cc", secondary: "#ff6600" },
       borderRadius: {
         none: "0px",
         sm: "4px",
@@ -17,8 +12,8 @@ tailwind.config = {
         "2xl": "24px",
         "3xl": "32px",
         full: "9999px",
-        button: "8px"
-      }
-    }
-  }
+        button: "8px",
+      },
+    },
+  },
 };
