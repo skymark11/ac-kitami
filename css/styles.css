@@ -116,3 +116,20 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
+/* リミックスアイコン用モンキーパッチ */
+:where([class^="ri-"])::before { content: "\f3c2"; }
+
+/* 点滅アニメーション */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.blink-text {
+  animation: blink 1.5s infinite;
+}
+
+/* ベース */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
