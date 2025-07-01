@@ -1,1157 +1,1152 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北見エアコン販売・設置 | 地域密着のエアコン専門店</title>
-
-  <!-- フォント -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- アイコン -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-  <!-- カスタムCSS -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Tailwind 設定 -->
-  <script src="js/tailwind-config.js"></script>
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北見エアコン販売・設置 | 地域密着のエアコン専門店</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+// Tailwind設定を先に定義
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#0066cc", secondary: "#ff6600" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-50">
-  <!-- ヘッダーセクション -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <h1 class="text-2xl font-['Pacifico'] text-primary">エアコンラボ北見店</h1>
-        </div>
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="#" class="text-gray-700 hover:text-primary font-medium">ホーム</a>
-          <a href="#services" class="text-gray-700 hover:text-primary font-medium">サービス</a>
-          <a href="#works" class="text-gray-700 hover:text-primary font-medium">施工事例</a>
-          <a href="#price" class="text-gray-700 hover:text-primary font-medium">料金案内</a>
-          <a href="#contact" class="text-gray-700 hover:text-primary font-medium">お問い合わせ</a>
-        </div>
-        <div class="flex items-center space-x-4">
-          <a href="tel:070-4080-0965" class="hidden md:flex items-center text-gray-800 hover:text-primary">
-            <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white mr-2">
-              <i class="ri-phone-fill ri-lg"></i>
-            </div>
-            <div>
-              <p class="text-xs">お電話でのお問い合わせ</p>
-              <p class="font-bold">070-4080-0965</p>
-            </div>
-          </a>
-          <a href="#line" class="hidden md:flex items-center bg-[#06C755] text-white px-4 py-2 rounded-button whitespace-nowrap">
-            <div class="w-6 h-6 flex items-center justify-center mr-1">
-              <i class="ri-line-fill ri-lg"></i>
-            </div>
-            <span>LINE相談</span>
-          </a>
-          <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-            <i class="ri-menu-line ri-2x text-gray-700"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- モバイルメニュー -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-      <div class="container mx-auto px-4 py-2">
-        <div class="flex flex-col space-y-3">
-          <a href="#" class="text-gray-700 hover:text-primary py-2">ホーム</a>
-          <a href="#services" class="text-gray-700 hover:text-primary py-2">サービス</a>
-          <a href="#works" class="text-gray-700 hover:text-primary py-2">施工事例</a>
-          <a href="#price" class="text-gray-700 hover:text-primary py-2">料金案内</a>
-          <a href="#about" class="text-gray-700 hover:text-primary py-2">会社概要</a>
-          <a href="#contact" class="text-gray-700 hover:text-primary py-2">お問い合わせ</a>
-          <div class="flex space-x-4 py-2">
-            <a href="tel:070-4080-0965" class="flex items-center text-gray-800 hover:text-primary">
-              <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white mr-2">
-                <i class="ri-phone-fill"></i>
-              </div>
-              <span class="font-bold">070-4080-0965</span>
-            </a>
-            <a href="#line" class="flex items-center bg-[#06C755] text-white px-3 py-1 rounded-button">
-              <div class="w-5 h-5 flex items-center justify-center mr-1">
-                <i class="ri-line-fill"></i>
-              </div>
-              <span>LINE相談</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- 緊急対応バナー -->
-  <div class="bg-red-600 text-white py-2">
+<!-- ヘッダーセクション -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">エアコンラボ北見店</h1>
+</div>
+<div class="hidden md:flex items-center space-x-6">
+<a href="#" class="text-gray-700 hover:text-primary font-medium">ホーム</a>
+<a href="#services" class="text-gray-700 hover:text-primary font-medium">サービス</a>
+<a href="#works" class="text-gray-700 hover:text-primary font-medium">施工事例</a>
+<a href="#price" class="text-gray-700 hover:text-primary font-medium">料金案内</a>
+<a href="#contact" class="text-gray-700 hover:text-primary font-medium">お問い合わせ</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="tel:070-4080-0965" class="hidden md:flex items-center text-gray-800 hover:text-primary">
+<div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white mr-2">
+<i class="ri-phone-fill ri-lg"></i>
+</div>
+<div>
+<p class="text-xs">お電話でのお問い合わせ</p>
+<p class="font-bold">070-4080-0965</p>
+</div>
+</a>
+<a href="#line" class="hidden md:flex items-center bg-[#06C755] text-white px-4 py-2 rounded-button whitespace-nowrap">
+<div class="w-6 h-6 flex items-center justify-center mr-1">
+<i class="ri-line-fill ri-lg"></i>
+</div>
+<span>LINE相談</span>
+</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+<i class="ri-menu-line ri-2x text-gray-700"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- モバイルメニュー -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+<div class="container mx-auto px-4 py-2">
+<div class="flex flex-col space-y-3">
+<a href="#" class="text-gray-700 hover:text-primary py-2">ホーム</a>
+<a href="#services" class="text-gray-700 hover:text-primary py-2">サービス</a>
+<a href="#works" class="text-gray-700 hover:text-primary py-2">施工事例</a>
+<a href="#price" class="text-gray-700 hover:text-primary py-2">料金案内</a>
+<a href="#about" class="text-gray-700 hover:text-primary py-2">会社概要</a>
+<a href="#contact" class="text-gray-700 hover:text-primary py-2">お問い合わせ</a>
+<div class="flex space-x-4 py-2">
+<a href="tel:070-4080-0965" class="flex items-center text-gray-800 hover:text-primary">
+<div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white mr-2">
+<i class="ri-phone-fill"></i>
+</div>
+<span class="font-bold">070-4080-0965</span>
+</a>
+<a href="#line" class="flex items-center bg-[#06C755] text-white px-3 py-1 rounded-button">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-line-fill"></i>
+</div>
+<span>LINE相談</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- 緊急対応バナー -->
+<div class="bg-red-600 text-white py-2">
+<div class="container mx-auto px-4">
+<div class="flex justify-center items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-2">
+<i class="ri-alarm-warning-fill ri-lg"></i>
+</div>
+<p class="text-center font-medium">7月、8月は大変混み合いますので、ご依頼はお急ぎください</p>
+</div>
+</div>
+</div>
+<!-- ヒーローセクション -->
+<section 
+  class="hero-section py-16 md:py-24" 
+  style="
+    background-image: url('images/hero-bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+  "
+>
+  <div class="hero-overlay w-full h-full py-16 md:py-24">
     <div class="container mx-auto px-4">
-      <div class="flex justify-center items-center">
-        <div class="w-6 h-6 flex items-center justify-center mr-2">
-          <i class="ri-alarm-warning-fill ri-lg"></i>
-        </div>
-        <p class="text-center font-medium">7月、8月は大変混み合いますので、ご依頼はお急ぎください</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ヒーローセクション -->
-  <section class="hero-section py-16 md:py-24" style="background-image: url('images/hero-bg.jpg');">
-    <div class="hero-overlay w-full h-full py-16 md:py-24">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="w-full md:w-1/2 mb-8 md:mb-0">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              北見市で<span class="text-primary">エアコン設置</span>なら<br>地域密着の当店へ
-            </h2>
-            <p class="text-lg text-gray-700 mb-6">
-              北見市を中心に、低価格でエアコン販売から設置工事まで<br>ワンストップでご提供。<br>最短で翌日対応可能！設置工事のみも対応致します！
-            </p>
-            <div class="flex flex-wrap gap-6">
-              <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-button text-lg font-medium shadow-xl transition duration-300 whitespace-nowrap">
-                エアコン販売＋設置工事
-              </a>
-              <a href="tel:070-4080-0965" class="bg-secondary hover:bg-orange-500 text-white px-8 py-4 rounded-button text-lg font-medium shadow-xl transition duration-300 whitespace-nowrap">
-                設置工事のみ
-              </a>
-            </div>
-          </div>
-          <div class="w-full md:w-1/2 flex justify-center">
-            <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-              <h3 class="text-xl font-bold text-center mb-4">お問い合わせ</h3>
-              <div class="flex flex-col space-y-4">
-                <a href="tel:070-4080-0965" class="flex items-center justify-center bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
-                  <div class="w-6 h-6 flex items-center justify-center mr-2">
-                    <i class="ri-phone-fill"></i>
-                  </div>
-                  <span>お電話でのお問い合わせ</span>
-                </a>
-                <a href="#contact" class="flex items-center justify-center bg-secondary hover:bg-orange-500 text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
-                  <div class="w-6 h-6 flex items-center justify-center mr-2">
-                    <i class="ri-mail-fill"></i>
-                  </div>
-                  <span>メールでのお問い合わせ</span>
-                </a>
-                <a href="#line" class="flex items-center justify-center bg-[#06C755] hover:bg-[#05a648] text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
-                  <div class="w-6 h-6 flex items-center justify-center mr-2">
-                    <i class="ri-line-fill"></i>
-                  </div>
-                  <span>LINEでのお問い合わせ</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 対応エリアセクション -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">対応エリア</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          エアコン設置工事は北見市を中心に、網走市、美幌町、津別町など道東エリアを広くカバーしています。お気軽にお問い合わせください。
-        </p>
-      </div>
-      <div class="flex flex-col md:flex-row items-center justify-center">
-        <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-4">主な対応エリア</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>北見市</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>網走市</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>美幌町</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>津別町</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>大空町</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>訓子府町</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>置戸町</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>佐呂間町</span>
-              </div>
-            </div>
-            <p class="mt-4 text-sm text-gray-600">※上記以外のエリアもご相談ください。可能な限り対応いたします。</p>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <div class="rounded-lg overflow-hidden shadow-lg">
-            <div
-              style="background-image: url('images/map-area.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: #f3f4f6; height: 400px;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 主要サービス紹介 -->
-  <section id="services" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">サービス内容</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          エアコンの販売から設置工事、メンテナンスまで、お客様の快適な空間づくりをトータルサポートいたします。
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- サービス1 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
-          <div class="h-48 overflow-hidden">
-            <img src="images/service-sell.jpg" alt="エアコン販売" class="w-full h-full object-cover object-top">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-3">エアコン販売</h3>
-            <p class="text-gray-600 mb-4">
-              各メーカーの最新モデルを取り揃え、お客様のニーズに合わせた最適なエアコンをご提案。省エネ性能の高いモデルから高機能タイプまで幅広く取り扱っています。
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">ダイキン</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">パナソニック</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">三菱電機</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">日立</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">シャープ</span>
-            </div>
-            <a href="#contact" class="inline-block bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">詳細を見る</a>
-          </div>
-        </div>
-
-        <!-- サービス2 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
-          <div class="h-48 overflow-hidden">
-            <img src="images/service-install.jpg" alt="取り付け・設置工事" class="w-full h-full object-cover object-top">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-3">取り付け・設置工事</h3>
-            <p class="text-gray-600 mb-4">
-              国家資格を持った専門スタッフが、丁寧かつスピーディーに設置工事を行います。壁の穴あけから配管工事まで、美観と機能性を両立した施工を提供します。
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">新規設置</span>
-              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">移設工事</span>
-              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">交換工事</span>
-              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">配管延長</span>
-            </div>
-            <a href="#contact" class="inline-block bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">詳細を見る</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- おすすめエアコンセクション -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">エアコン <span class="text-primary">購入＋設置</span></h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          <span class="inline-block text-2xl font-bold text-red-700 bg-white px-8 py-6 rounded-lg border-4 border-red-600 shadow-lg">
-            家電量販店よりお安く出せる機種多数！<br>旧モデルや特価品も多数ご用意！
-          </span>
-          <br><br>お客様のニーズやご予算に合わせて最適なエアコンをご提案します。
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- 商品1 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src="images/panasonic-cs-221dfr.jpg" alt="パナソニック CS-221DFR" class="w-full h-48 object-cover">
-            <div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">人気</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold mb-2">パナソニック CS-221DFR</h3>
-            <p class="text-sm text-gray-600 mb-4">6畳～8畳向け / 2024年モデル / 省エネ基準達成率114%</p>
-            <div class="flex items-center mb-4">
-              <span class="text-sm text-gray-500 line-through">通常価格: 125,000円</span>
-              <span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">在庫あり</span>
-            </div>
-            <div class="text-xl font-bold text-red-600 mb-4">98,000円 <span class="text-sm font-normal text-gray-600">（税込・工事費込）</span></div>
-            <a href="#contact" class="block w-full bg-primary hover:bg-blue-700 text-white text-center px-4 py-2 rounded-button transition duration-300">見積り依頼</a>
-          </div>
-        </div>
-
-        <!-- 商品2 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src="images/daikin-s28ytvs-w.jpg" alt="ダイキン S28YTVS-W" class="w-full h-48 object-cover">
-            <div class="absolute top-2 left-2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">おすすめ</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold mb-2">ダイキン S28YTVS-W</h3>
-            <p class="text-sm text-gray-600 mb-4">8畳～12畳向け / 2024年モデル / 高性能フィルター搭載</p>
-            <div class="flex items-center mb-4">
-              <span class="text-sm text-gray-500 line-through">通常価格: 158,000円</span>
-              <span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">在庫あり</span>
-            </div>
-            <div class="text-xl font-bold text-red-600 mb-4">128,000円 <span class="text-sm font-normal text-gray-600">（税込・工事費込）</span></div>
-            <a href="#contact" class="block w-full bg-primary hover:bg-blue-700 text-white text-center px-4 py-2 rounded-button transition duration-300">見積り依頼</a>
-          </div>
-        </div>
-
-        <!-- 商品3 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src="images/mitsubishi-msz-zw5623s.jpg" alt="三菱 MSZ-ZW5623S" class="w-full h-48 object-cover">
-            <div class="absolute top-2 left-2 bg-orange-500 text-white px-3 py-1 rounded-full text-sm">特価品</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold mb-2">三菱 MSZ-ZW5623S</h3>
-            <p class="text-sm text-gray-600 mb-4">14畳～18畳向け / 2023年モデル / AI温度コントロール</p>
-            <div class="flex items-center mb-4">
-              <span class="text-sm text-gray-500 line-through">通常価格: 195,000円</span>
-              <span class="ml-2 bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">残り1台</span>
-            </div>
-            <div class="text-xl font-bold text-red-600 mb-4">158,000円 <span class="text-sm font-normal text-gray-600">（税込・工事費込）</span></div>
-            <a href="#contact" class="block w-full bg-primary hover:bg-blue-700 text-white text-center px-4 py-2 rounded-button transition duration-300">見積り依頼</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-12">
-        <h3 class="text-xl font-bold mb-4">上記以外のエアコンもご相談ください</h3>
-        <p class="text-gray-600 mb-6">
-          旧モデルや特価品、お客様のご希望に合わせたエアコンを多数取り扱っております。<br>予算やお部屋の広さに合わせて最適なエアコンをご提案します。
-        </p>
-        <a href="#contact" class="inline-block bg-secondary hover:bg-orange-500 text-white px-8 py-4 rounded-button font-medium shadow-lg transition duration-300">無料でお見積り</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- エアコン設置工事セクション -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">エアコン設置工事価格と内容</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          すでにエアコン本体をお持ちの方、ネットや家電量販店で購入された方も安心。<br>プロの技術で丁寧に設置いたします。
-        </p>
-      </div>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
-          <div class="bg-gray-50 rounded-lg p-8 h-full">
-            <h3 class="text-xl font-bold mb-6">標準工事内容</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>室内機・室外機の設置</span>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>壁穴あけ工事（木造・軽鉄骨等）</span>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>配管工事（冷媒管・ドレンホース 4m まで）</span>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>断熱材・化粧テープ処理</span>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>真空引き・エアパージ作業</span>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>動作確認・リモコン設定</span>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
-                  <i class="ri-checkbox-circle-fill"></i>
-                </div>
-                <span>簡易説明・清掃</span>
-              </li>
-            </ul>
-            <div class="mt-8 p-4 bg-white rounded-lg border border-gray-200">
-              <div class="text-center">
-                <p class="text-lg font-bold text-primary mb-2">標準工事価格</p>
-                <p class="text-3xl font-bold">22,000円</p>
-                <p class="text-sm text-gray-600 mt-2">※弊社で購入された方の設置工事は10％～割引致します</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <div class="bg-gray-50 rounded-lg p-8 h-full">
-            <h3 class="text-xl font-bold mb-6">追加工事オプション</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
-                  <i class="ri-add-circle-fill"></i>
-                </div>
-                <div>
-                  <p class="font-medium">配管延長工事</p>
-                  <p class="text-sm text-gray-600">標準4mを超える場合、1mあたり2,000円</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
-                  <i class="ri-add-circle-fill"></i>
-                </div>
-                <div>
-                  <p class="font-medium">室内外化粧カバー</p>
-                  <p class="text-sm text-gray-600">配管カバー取付 3,000円〜</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
-                  <i class="ri-add-circle-fill"></i>
-                </div>
-                <div>
-                  <p class="font-medium">専用コンセント増設</p>
-                  <p class="text-sm text-gray-600">電源がない場合 5,000円〜</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
-                  <i class="ri-add-circle-fill"></i>
-                </div>
-                <div>
-                  <p class="font-medium">ブレーカー交換</p>
-                  <p class="text-sm text-gray-600">容量不足の場合 8,000円〜</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
-                  <i class="ri-add-circle-fill"></i>
-                </div>
-                <div>
-                  <p class="font-medium">高所作業</p>
-                  <p class="text-sm text-gray-600">2階以上の場合 3,000円〜</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
-                  <i class="ri-add-circle-fill"></i>
-                </div>
-                <div>
-                  <p class="font-medium">石膏調査</p>
-                  <p class="text-sm text-gray-600">必要な場合 5,000円</p>
-                </div>
-              </li>
-            </ul>
-            <div class="mt-8 p-4 bg-blue-50 rounded-lg">
-              <p class="text-sm text-gray-700">
-                追加工事が必要かどうかは、現地調査後にご案内いたします。<br>
-                事前見積りで安心、追加料金の心配なし！
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 選ばれる理由セクション -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">選ばれる<span class="text-primary">4</span>つの理由</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">北見市で多くのお客様に選ばれ続ける理由をご紹介します。</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-gray-50 rounded-lg p-6 shadow-md">
-          <div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
-            <i class="ri-verified-badge-fill ri-2x"></i>
-          </div>
-          <h3 class="text-xl font-bold text-center mb-3">有資格者による施工</h3>
-          <p class="text-gray-600 text-center">
-            電気工事士第二種、一般建築物石綿含有建材調査者、石綿作業主任者の資格保有
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            北見市で<span class="text-primary">エアコン設置</span>なら<br>地域密着の当店へ
+          </h2>
+          <p class="text-lg text-gray-700 mb-6">
+            北見市を中心に、低価格でエアコン販売から設置工事まで<br>ワンストップでご提供。<br>最短で翌日対応可能！設置工事のみも対応致します！
           </p>
+         <!-- ヒーローセクションのCTAボタン部分を以下に置き換え -->
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+  <a href="#aircon-purchase-section" class="pc-sales-link hidden md:inline-block bg-primary text-white px-8 py-4 rounded-button text-lg font-bold hover:bg-blue-700 transition-colors">
+    <i class="ri-shopping-cart-line mr-2"></i>
+    エアコン購入＋設置工事
+  </a>
+  <a href="#aircon-purchase-section" class="mobile-sales-link md:hidden bg-primary text-white px-8 py-4 rounded-button text-lg font-bold hover:bg-blue-700 transition-colors">
+    <i class="ri-shopping-cart-line mr-2"></i>
+    エアコン購入＋設置工事
+  </a>
+  
+  <a href="#installation-work-section" class="pc-install-link hidden md:inline-block bg-white text-primary border-2 border-primary px-8 py-4 rounded-button text-lg font-bold hover:bg-gray-50 transition-colors">
+    <i class="ri-tools-line mr-2"></i>
+    設置工事のみ
+  </a>
+  <a href="#installation-work-section" class="mobile-install-link md:hidden bg-white text-primary border-2 border-primary px-8 py-4 rounded-button text-lg font-bold hover:bg-gray-50 transition-colors">
+    <i class="ri-tools-line mr-2"></i>
+    設置工事のみ
+  </a>
+</div>
         </div>
-        <div class="bg-gray-50 rounded-lg p-6 shadow-md">
-          <div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
-            <i class="ri-bar-chart-fill ri-2x"></i>
-          </div>
-          <h3 class="text-xl font-bold text-center mb-3">豊富な施工実績</h3>
-          <p class="text-gray-600 text-center">2024年度のエアコン設置実績100台以上。安心と信頼の技術力</p>
-        </div>
-        <div class="bg-gray-50 rounded-lg p-6 shadow-md">
-          <div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
-            <i class="ri-building-2-fill ri-2x"></i>
-          </div>
-          <h3 class="text-xl font-bold text-center mb-3">大手住宅メーカー経験</h3>
-          <p class="text-gray-600 text-center">北見市の大手住宅メーカーでの施工経験を活かした確かな技術</p>
-        </div>
-        <div class="bg-gray-50 rounded-lg p-6 shadow-md">
-          <div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
-            <i class="ri-time-fill ri-2x"></i>
-          </div>
-          <h3 class="text-xl font-bold text-center mb-3">柔軟な対応時間</h3>
-          <p class="text-gray-600 text-center">営業時間外や対応地域外の予約も相談可能。お客様のご都合に合わせます</p>
-        </div>
-      </div>
-      <div class="mt-16 bg-gray-50 rounded-lg p-8 shadow-lg">
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="w-full md:w-1/2 mb-8 md:mb-0">
-            <h3 class="text-2xl font-bold mb-4">お客様満足度98.5%</h3>
-            <p class="text-gray-600 mb-6">
-              過去1年間に当社でエアコン設置をご依頼いただいたお客様へのアンケート結果です。丁寧な作業と親切な対応で、多くのお客様にご満足いただいております。
-            </p>
-            <div class="flex items-center mb-4">
-              <div class="w-32 text-sm font-medium">満足度</div>
-              <div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
-                <div class="h-full bg-primary" style="width: 98.5%"></div>
-              </div>
-              <div class="w-16 text-right text-sm font-medium">98.5%</div>
-            </div>
-            <div class="flex items-center mb-4">
-              <div class="w-32 text-sm font-medium">価格満足度</div>
-              <div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
-                <div class="h-full bg-primary" style="width: 94.2%"></div>
-              </div>
-              <div class="w-16 text-right text-sm font-medium">94.2%</div>
-            </div>
-            <div class="flex items-center mb-4">
-              <div class="w-32 text-sm font-medium">対応速度</div>
-              <div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
-                <div class="h-full bg-primary" style="width: 97.8%"></div>
-              </div>
-              <div class="w-16 text-right text-sm font-medium">97.8%</div>
-            </div>
-            <div class="flex items-center">
-              <div class="w-32 text-sm font-medium">再利用意向</div>
-              <div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
-                <div class="h-full bg-primary" style="width: 99.1%"></div>
-              </div>
-              <div class="w-16 text-right text-sm font-medium">99.1%</div>
-            </div>
-          </div>
-          <div class="w-full md:w-1/2 md:pl-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h4 class="text-lg font-bold mb-4">お客様の声</h4>
-              <div class="space-y-4">
-                <div class="border-l-4 border-primary pl-4 py-2">
-                  <p class="text-gray-600 italic mb-2">
-                    「急な故障で困っていたところ、当日中に対応してくださり助かりました。作業も丁寧で、使い方まで詳しく説明していただきました。」
-                  </p>
-                  <p class="text-sm font-medium">北見市 佐藤様（42歳）</p>
-                </div>
-                <div class="border-l-4 border-primary pl-4 py-2">
-                  <p class="text-gray-600 italic mb-2">
-                    「他店よりも良心的な価格で、しかも工事の仕上がりが非常に綺麗でした。次回も必ずこちらにお願いします。」
-                  </p>
-                  <p class="text-sm font-medium">網走市 鈴木様（35歳）</p>
-                </div>
-                <div class="border-l-4 border-primary pl-4 py-2">
-                  <p class="text-gray-600 italic mb-2">
-                    「北海道の厳しい冬に備えて設置をお願いしました。電気代の節約方法など、親身になってアドバイスいただき感謝しています。」
-                  </p>
-                  <p class="text-sm font-medium">美幌町 高橋様（58歳）</p>
-                </div>
-              </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+          <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h3 class="text-xl font-bold text-center mb-4">お問い合わせ</h3>
+            <div class="flex flex-col space-y-4">
+              <a href="tel:070-4080-0965" class="flex items-center justify-center bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
+                <div class="w-6 h-6 flex items-center justify-center mr-2"><i class="ri-phone-fill"></i></div>
+                <span>お電話でのお問い合わせ</span>
+              </a>
+              <a href="#contact" class="flex items-center justify-center bg-secondary hover:bg-orange-500 text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
+                <div class="w-6 h-6 flex items-center justify-center mr-2"><i class="ri-mail-fill"></i></div>
+                <span>メールでのお問い合わせ</span>
+              </a>
+              <a href="#line" class="flex items-center justify-center bg-[#06C755] hover:bg-[#05a648] text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
+                <div class="w-6 h-6 flex items-center justify-center mr-2"><i class="ri-line-fill"></i></div>
+                <span>LINEでのお問い合わせ</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 施工事例ギャラリー -->
-  <section id="works" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">施工事例</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">これまでに手がけた施工事例の一部をご紹介します。様々な住宅タイプやニーズに合わせた設置実績があります。</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 事例1 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src="images/case1-before-after.jpg" alt="マンションリビングの設置事例" class="w-full h-64 object-cover object-top">
-            <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 rounded-br-lg">Before & After</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold mb-2">マンションリビングの設置事例</h3>
-            <p class="text-gray-600 mb-4">北見市内のマンションにおける新規設置工事。壁の色に合わせた配管カバーで美観を損なわない仕上がりに。</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">新規設置</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">ダイキン製</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">マンション</span>
-            </div>
-            <div class="flex justify-center items-center">
-              <span class="text-gray-700 font-medium">施工費用: 85,000円</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 事例2 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src="images/case2-before-after.jpg" alt="戸建て寝室の設置事例" class="w-full h-64 object-cover object-top">
-            <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 rounded-br-lg">Before & After</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold mb-2">戸建て寝室の設置事例</h3>
-            <p class="text-gray-600 mb-4">網走市の戸建て住宅の寝室に設置。静音性の高いモデルを選定し、快適な睡眠環境を実現。</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">新規設置</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">三菱電機製</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">戸建て</span>
-            </div>
-            <div class="flex justify-center items-center">
-              <span class="text-gray-700 font-medium">施工費用: 78,000円</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 事例3 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src="images/case3-before-after.jpg" alt="店舗エアコン交換事例" class="w-full h-64 object-cover object-top">
-            <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 rounded-br-lg">Before & After</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold mb-2">店舗エアコン交換事例</h3>
-            <p class="text-gray-600 mb-4">北見市内の飲食店における業務用エアコンの交換工事。営業時間外の夜間工事で店舗運営に影響なく完了。</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">交換工事</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">パナソニック製</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">商業施設</span>
-            </div>
-            <div class="flex justify-center items-center">
-              <span class="text-gray-700 font-medium">施工費用: 120,000円</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <a href="#contact" class="inline-block bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
-          お見積り・ご相談はこちら
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 料金・見積もりセクション -->
-  <section id="price" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">料金案内</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">明朗会計を心がけ、追加料金のない分かりやすい料金体系をご用意しています。</p>
-      </div>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
-          <div class="bg-gray-50 rounded-lg p-6 shadow-md h-full">
-            <h3 class="text-xl font-bold mb-6 text-center">標準工事料金</h3>
-            <div class="overflow-x-auto">
-              <table class="w-full text-left">
-                <thead>
-                  <tr class="bg-gray-100">
-                    <th class="px-4 py-3 text-sm font-medium text-gray-700">エアコンタイプ</th>
-                    <th class="px-4 py-3 text-sm font-medium text-gray-700">標準工事料金</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">壁掛け 6畳〜8畳用</td>
-                    <td class="px-4 py-3 font-medium">15,000円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">壁掛け 10畳〜14畳用</td>
-                    <td class="px-4 py-3 font-medium">18,000円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">壁掛け 16畳〜20畳用</td>
-                    <td class="px-4 py-3 font-medium">22,000円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">天井埋込型</td>
-                    <td class="px-4 py-3 font-medium">35,000円</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-3">床置型</td>
-                    <td class="px-4 py-3 font-medium">20,000円</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="mt-6">
-              <h4 class="font-bold mb-2">標準工事に含まれるもの</h4>
-              <ul class="space-y-2 text-gray-600">
-                <li class="flex items-start">
-                  <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
-                    <i class="ri-check-line"></i>
-                  </div>
-                  <span>室内機・室外機の設置</span>
-                </li>
-                <li class="flex items-start">
-                  <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
-                    <i class="ri-check-line"></i>
-                  </div>
-                  <span>冷媒配管（～4m）</span>
-                </li>
-                <li class="flex items-start">
-                  <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
-                    <i class="ri-check-line"></i>
-                  </div>
-                  <span>ドレンホース・配線</span>
-                </li>
-                <li class="flex items-start">
-                  <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
-                    <i class="ri-check-line"></i>
-                  </div>
-                  <span>穴あけ工事（木造壁）</span>
-                </li>
-                <li class="flex items-start">
-                  <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
-                    <i class="ri-check-line"></i>
-                  </div>
-                  <span>試運転・動作確認</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <div class="bg-gray-50 rounded-lg p-6 shadow-md h-full">
-            <h3 class="text-xl font-bold mb-6 text-center">オプション工事料金</h3>
-            <div class="overflow-x-auto">
-              <table class="w-full text-left">
-                <thead>
-                  <tr class="bg-gray-100">
-                    <th class="px-4 py-3 text-sm font-medium text-gray-700">オプション内容</th>
-                    <th class="px-4 py-3 text-sm font-medium text-gray-700">追加料金</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">配管延長（1mあたり）</td>
-                    <td class="px-4 py-3 font-medium">3,000円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">コンクリート壁穴あけ</td>
-                    <td class="px-4 py-3 font-medium">8,000円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">配管カバー（1mあたり）</td>
-                    <td class="px-4 py-3 font-medium">2,500円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">ドレンポンプ設置</td>
-                    <td class="px-4 py-3 font-medium">15,000円</td>
-                  </tr>
-                  <tr class="border-b border-gray-200">
-                    <td class="px-4 py-3">高所作業（3F以上）</td>
-                    <td class="px-4 py-3 font-medium">5,000円</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-3">既存エアコン取り外し</td>
-                    <td class="px-4 py-3 font-medium">5,000円</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-              <p class="text-sm text-gray-700">※料金は税込表示です。現場状況により変動する場合があります。正確な料金は現地調査後にお見積りいたします。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- お支払い方法セクション -->
-  <section id="payment" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">お支払い方法</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">お客様のご都合に合わせて、様々なお支払い方法をご用意しております。</p>
-      </div>
-      <div class="bg-white rounded-lg p-8 shadow-lg max-w-2xl mx-auto">
-        <div class="flex justify-center gap-16 mb-8">
-          <div class="text-center">
-            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="ri-money-yen-circle-fill ri-3x text-gray-700"></i>
-            </div>
-            <span class="font-medium text-lg">現金</span>
-          </div>
-          <div class="text-center">
-            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="ri-bank-fill ri-3x text-gray-700"></i>
-            </div>
-            <span class="font-medium text-lg">銀行振込</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- お問い合わせセクション -->
-  <section id="contact" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">お問い合わせ</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          エアコンの購入・設置に関するご質問やお見積りのご依頼は、お電話、LINEまたはフォームよりお気軽にお問い合わせください。
-        </p>
-      </div>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
-          <div class="bg-white rounded-lg shadow-lg p-8 h-full">
-            <h3 class="text-xl font-bold mb-6">お問い合わせフォーム</h3>
-            <form>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2">お名前 <span class="text-red-500">*</span></label>
-                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2">電話番号 <span class="text-red-500">*</span></label>
-                <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2">メールアドレス</label>
-                <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2">ご住所</label>
-                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="北見市○○町1-2-3">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2">お問い合わせ内容 <span class="text-red-500">*</span></label>
-                <select class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8 appearance-none bg-white"
-                        style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><polyline points=&quot;6 9 12 15 18 9&quot;></polyline></svg>'); background-repeat: no-repeat; background-position: right 10px center; background-size: 16px;"
-                        required>
-                  <option value="">選択してください</option>
-                  <option value="estimate">お見積り依頼</option>
-                  <option value="product">エアコン本体について</option>
-                  <option value="installation">設置工事について</option>
-                  <option value="other">その他</option>
-                </select>
-              </div>
-              <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-medium mb-2">詳細内容</label>
-                <textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary h-32" placeholder="ご質問やご要望の詳細をお書きください"></textarea>
-              </div>
-              <div class="mb-6">
-                <label class="custom-checkbox">
-                  <input type="checkbox" required>
-                  <span class="checkmark"></span>
-                  <span class="text-sm">個人情報の取り扱いに同意する</span>
-                </label>
-              </div>
-              <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-button shadow-md transition duration-300 whitespace-nowrap">
-                送信する
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <h3 class="text-xl font-bold mb-6">お電話でのお問い合わせ</h3>
-            <div class="flex items-center mb-6">
-              <div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mr-4">
-                <i class="ri-phone-fill ri-2x"></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-600">お気軽にお電話ください</p>
-                <a href="tel:070-4080-0965" class="text-2xl font-bold text-primary hover:text-blue-700">070-4080-0965</a>
-              </div>
-            </div>
-            <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-              <p class="text-sm text-gray-700">※受付時間：9:00～19:00（年中無休）営業時間外のお電話は翌日の折り返しになる場合があります</p>
-            </div>
-          </div>
-          <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <h3 class="text-xl font-bold mb-6">LINE公式アカウント</h3>
-            <div class="flex items-center mb-6">
-              <div class="w-16 h-16 flex items-center justify-center bg-[#06C755] rounded-full text-white mr-4">
-                <i class="ri-line-fill ri-2x"></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-600">LINEでカンタン相談・見積もり</p>
-                <p class="text-lg font-bold">友だち追加で特典あり！</p>
-                <p class="text-sm text-gray-600">24時間いつでもメッセージOK</p>
-              </div>
-            </div>
-            <a href="#" class="block w-full bg-[#06C755] hover:bg-[#05a648] text-white text-center px-6 py-3 rounded-button font-medium shadow-md transition duration-300 whitespace-nowrap">
-              LINE公式アカウントを追加する
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- よくある質問 -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">よくある質問</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">お客様からよくいただくご質問とその回答をまとめました。</p>
-      </div>
-      <div class="max-w-3xl mx-auto">
-        <div class="space-y-4" id="faq-container">
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-1">
-              <span class="font-medium text-left">エアコン設置の見積もりは無料ですか？</span>
-              <div class="w-6 h-6 flex items-center justify-center text-primary">
-                <i class="ri-add-line faq-icon"></i>
-              </div>
-            </button>
-            <div id="faq-1" class="faq-content hidden p-4 bg-white">
-              <p class="text-gray-600">はい、現地調査とお見積りは無料で承っております。お客様のご自宅の状況を確認し、最適なエアコンと設置方法をご提案いたします。お気軽にお問い合わせください。</p>
-            </div>
-          </div>
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-2">
-              <span class="font-medium text-left">エアコン設置の工事期間はどのくらいですか？</span>
-              <div class="w-6 h-6 flex items-center justify-center text-primary">
-                <i class="ri-add-line faq-icon"></i>
-              </div>
-            </button>
-            <div id="faq-2" class="faq-content hidden p-4 bg-white">
-              <p class="text-gray-600">標準的な壁掛けエアコンの設置工事は、通常2時間程度で完了します。ただし、コンセント増設工事や特殊な工事が必要な場合は、それ以上の時間がかかることがあります。</p>
-            </div>
-          </div>
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-3">
-              <span class="font-medium text-left">どのメーカーのエアコンを取り扱っていますか？</span>
-              <div class="w-6 h-6 flex items-center justify-center text-primary">
-                <i class="ri-add-line faq-icon"></i>
-              </div>
-            </button>
-            <div id="faq-3" class="faq-content hidden p-4 bg-white">
-              <p class="text-gray-600">ダイキン、パナソニック、三菱電機、日立、シャープなど、主要メーカーのエアコンを幅広く取り扱っております。お客様のご予算やご要望に合わせて、最適な機種をご提案いたします。</p>
-            </div>
-          </div>
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-4">
-              <span class="font-medium text-left">古いエアコンの取り外しと処分もお願いできますか？</span>
-              <div class="w-6 h-6 flex items-center justify-center text-primary">
-                <i class="ri-add-line faq-icon"></i>
-              </div>
-            </button>
-            <div id="faq-4" class="faq-content hidden p-4 bg-white">
-              <p class="text-gray-600">はい、古いエアコンの取り外しと適正処分も承っております。リサイクル料金と収集運搬料金が別途かかりますが、法令に基づいた適切な処理を行いますのでご安心ください。</p>
-            </div>
-          </div>
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-5">
-              <span class="font-medium text-left">設置後の保証はありますか？</span>
-              <div class="w-6 h-6 flex items-center justify-center text-primary">
-                <i class="ri-add-line faq-icon"></i>
-              </div>
-            </button>
-            <div id="faq-5" class="faq-content hidden p-4 bg-white">
-              <p class="text-gray-600">当社の設置工事には1年間の工事保証が付いています。工事に起因する不具合が発生した場合は、無償で修理対応いたします。また、エアコン本体はメーカー保証（通常1年）が適用されます。延長保証プランもご用意しておりますので、ご希望の方はお問い合わせください。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 会社概要 -->
-  <section id="about" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">私たちの思い</h2>
-      </div>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-2/2">
-          <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <p class="text-gray-600 mb-4">
-              北海道の厳しい気候の中で、快適な室内環境を提供することが私たちの使命です。夏の暑さ、冬の寒さから皆様を守り、心地よい空間づくりをサポートします。
-            </p>
-            <p class="text-gray-600 mb-4">
-              地域密着型の企業として、お客様一人ひとりのニーズに丁寧に対応し、信頼関係を築くことを大切にしています。「ただエアコンを売る・設置する」だけでなく、お客様の生活に寄り添ったサービスを提供することが私たちの誇りです。
-            </p>
-            <p class="text-gray-600">
-              これからも技術力の向上と誠実なサービスを通じて、北見市とその周辺地域の皆様の快適な暮らしに貢献してまいります。
-            </p>
-          </div>
-          <div class="bg-white rounded-lg shadow-lg p-8">
-            <h3 class="text-xl font-bold mb-6">取扱メーカー</h3>
-            <div class="grid grid-cols-3 gap-4">
-              <div class="flex flex-col items-center">
-                <div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
-                  <i class="ri-building-2-fill ri-2x"></i>
-                </div>
-                <span class="text-sm text-center">ダイキン</span>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
-                  <i class="ri-building-2-fill ri-2x"></i>
-                </div>
-                <span class="text-sm text-center">パナソニック</span>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
-                  <i class="ri-building-2-fill ri-2x"></i>
-                </div>
-                <span class="text-sm text-center">三菱電機</span>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
-                  <i class="ri-building-2-fill ri-2x"></i>
-                </div>
-                <span class="text-sm text-center">日立</span>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
-                  <i class="ri-building-2-fill ri-2x"></i>
-                </div>
-                <span class="text-sm text-center">シャープ</span>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
-                  <i class="ri-building-2-fill ri-2x"></i>
-                </div>
-                <span class="text-sm text-center">東芝</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 bg-primary text-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">快適な空間づくりは、私たちにお任せください</h2>
-        <p class="text-lg mb-8">エアコンの販売から設置、メンテナンスまで、<br>北見市のエアコン専門店がトータルサポートいたします。</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="tel:070-4080-0965" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-button font-medium shadow-lg transition duration-300 flex items-center justify-center whitespace-nowrap">
-            <div class="w-6 h-6 flex items-center justify-center mr-2">
-              <i class="ri-phone-fill"></i>
-            </div>
-            <span>お電話でのお問い合わせ</span>
-          </a>
-          <a href="#contact" class="bg-secondary hover:bg-orange-500 text-white px-8 py-4 rounded-button font-medium shadow-lg transition duration-300 flex items-center justify-center whitespace-nowrap">
-            <div class="w-6 h-6 flex items-center justify-center mr-2">
-              <i class="ri-mail-fill"></i>
-            </div>
-            <span>無料お見積りを依頼する</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- フッター -->
-  <footer class="bg-gray-800 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-wrap -mx-4">
-        <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
-          <h3 class="text-xl font-['Pacifico'] mb-4">エアコンラボ北見店</h3>
-          <p class="text-gray-300 mb-4">北見市を中心に、エアコンの販売・設置・メンテナンスを行う地域密着型の専門店です。</p>
-          <div class="flex space-x-4">
-            <div class="w-8 h-8 flex items-center justify-center">
-              <i class="ri-facebook-fill"></i>
-            </div>
-            <div class="w-8 h-8 flex items-center justify-center">
-              <i class="ri-twitter-x-fill"></i>
-            </div>
-            <div class="w-8 h-8 flex items-center justify-center">
-              <i class="ri-instagram-fill"></i>
-            </div>
-            <div class="w-8 h-8 flex items-center justify-center">
-              <i class="ri-line-fill"></i>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
-          <h3 class="text-lg font-bold mb-4">サービス</h3>
-          <ul class="space-y-2">
-            <li><a href="#services" class="text-gray-300 hover:text-white">エアコン販売</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-white">設置工事</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-white">メンテナンス・修理</a></li>
-            <li><a href="#price" class="text-gray-300 hover:text-white">料金案内</a></li>
-            <li><a href="#works" class="text-gray-300 hover:text-white">施工事例</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-gray-700 mt-8 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-4 md:mb-0">
-            <p class="text-sm text-gray-400">&copy; 2025 北見エアコン販売・設置 All Rights Reserved.</p>
-          </div>
-          <div class="flex space-x-4">
-            <a href="#" class="text-sm text-gray-400 hover:text-white">プライバシーポリシー</a>
-            <a href="#" class="text-sm text-gray-400 hover:text-white">特定商取引法に基づく表記</a>
-            <a href="#" class="text-sm text-gray-400 hover:text-white">サイトマップ</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- フローティングCTA -->
-  <div class="floating-cta">
-    <div class="flex flex-col space-y-2">
-      <a href="tel:070-4080-0965" class="bg-primary hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-lg transition duration-300 flex items-center whitespace-nowrap">
-        <div class="w-6 h-6 flex items-center justify-center mr-2">
-          <i class="ri-phone-fill"></i>
-        </div>
-        <span>お電話</span>
-      </a>
-      <a href="#line" class="bg-[#06C755] hover:bg-[#05a648] text-white px-4 py-3 rounded-full shadow-lg transition duration-300 flex items-center whitespace-nowrap">
-        <div class="w-6 h-6 flex items-center justify-center mr-2">
-          <i class="ri-line-fill"></i>
-        </div>
-        <span>LINE</span>
-      </a>
     </div>
   </div>
+</section>
 
-  <!-- カスタムJS -->
-  <script src="js/main.js"></script>
+<!-- 対応エリアセクション -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">対応エリア</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">エアコン設置工事は北見市を中心に、網走市、美幌町、津別町など道東エリアを広くカバーしています。お気軽にお問い合わせください。</p>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-center">
+<div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+<div class="bg-gray-100 p-6 rounded-lg">
+<h3 class="text-xl font-bold mb-4">主な対応エリア</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>北見市</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>網走市</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>美幌町</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>津別町</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>大空町</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>訓子府町</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>置戸町</span>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-2">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>佐呂間町</span>
+</div>
+</div>
+<p class="mt-4 text-sm text-gray-600">※上記以外のエリアもご相談ください。可能な限り対応いたします。</p>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="rounded-lg overflow-hidden shadow-lg">
+<div style="background-image: url('https://static.readdy.ai/image/357bf5fbd331bc94341a4e165c574ad2/fe6760cf5c6829b2e6d03d309a73ec84.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: #f3f4f6; height: 400px;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 主要サービス紹介 -->
+<section id="service-content" class="py-16 bg-gray-50"></section>
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">サービス内容</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">エアコンの販売から設置工事、メンテナンスまで、お客様の快適な空間づくりをトータルサポートいたします。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- サービス1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Brand%20new%20air%20conditioner%20units%20in%20boxes%2C%20different%20models%20and%20sizes%2C%20clean%20modern%20display%20in%20showroom%2C%20high%20quality%20products%2C%20Japanese%20style%2C%20professional%20presentation&width=600&height=400&seq=2&orientation=landscape" alt="エアコン販売" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div id="aircon-sales" class="bg-white p-6 rounded-lg shadow-md">
+<h3 class="text-xl font-bold mb-4">エアコン購入</h3>
+<p class="text-gray-600 mb-4">各メーカーの最新モデルを取り揃え、お客様のニーズに合わせた最適なエアコンをご提案。省エネ性能の高いモデルから高機能タイプまで幅広く取り扱っています。</p><div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">ダイキン</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">パナソニック</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">三菱電機</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">日立</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">シャープ</span>
+</div>
+<a href="#aircon-purchase-section" class="hidden md:inline-block bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">詳細を見る</a>
+<a href="#aircon-purchase-section" class="md:hidden inline-block bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">詳細を見る</a>
+</div>
+</div>
+</div>
+<!-- サービス2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20technician%20installing%20air%20conditioner%20on%20wall%2C%20tools%2C%20ladder%2C%20careful%20installation%20process%2C%20clean%20modern%20Japanese%20apartment%2C%20detailed%20work%2C%20professional%20service&width=600&height=400&seq=3&orientation=landscape" alt="取り付け・設置工事" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div id="installation-service" class="bg-white p-6 rounded-lg shadow-md">
+<h3 class="text-xl font-bold mb-4">取り付け・設置工事</h3>
+<p class="text-gray-600 mb-4">国家資格を持った専門スタッフが、丁寧かつスピーディーに設置工事を行います。壁の穴あけから配管工事まで、美観と機能性を両立した施工を提供します。</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">新規設置</span>
+<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">移設工事</span>
+<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">交換工事</span>
+<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">配管延長</span>
+</div>
+<a href="#installation-work-section" class="hidden md:inline-block bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">詳細を見る</a>
+<a href="#installation-work-section" class="md:hidden inline-block bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">詳細を見る</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- おすすめエアコンセクション -->
+<section id="aircon-purchase-section" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">エアコン <span class="text-primary">購入＋設置</span></h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        <span class="inline-block text-2xl font-bold text-red-700 bg-white px-8 py-6 rounded-lg border-4 border-red-600 shadow-lg">
+                            家電量販店よりお安く出せる機種多数！<br>旧モデルや特価品も多数ご用意！
+                        </span>
+                        <br><br>お客様のニーズやご予算に合わせて最適なエアコンをご提案します。
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- 商品1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Modern%20white%20Panasonic%20air%20conditioner%20unit%20mounted%20on%20wall%2C%20sleek%20design%2C%20energy%20efficient%2C%20Japanese%20style%20interior&width=600&height=400&seq=8&orientation=landscape" alt="パナソニック CS-221DFR" class="w-full h-48 object-cover">
+<div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">人気</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold mb-2">パナソニック CS-221DFR</h3>
+<p class="text-sm text-gray-600 mb-4">6畳～8畳向け / 2024年モデル / 省エネ基準達成率114%</p>
+<div class="flex items-center mb-4">
+<span class="text-sm text-gray-500 line-through">通常価格: 125,000円</span>
+<span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">在庫あり</span>
+</div>
+<div class="text-xl font-bold text-red-600 mb-4">98,000円 <span class="text-sm font-normal text-gray-600">（税込・工事費込）</span></div>
+<a href="#contact" class="block w-full bg-primary hover:bg-blue-700 text-white text-center px-4 py-2 rounded-button transition duration-300">見積り依頼</a>
+</div>
+</div>
+<!-- 商品2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Modern%20white%20Daikin%20air%20conditioner%20unit%20mounted%20on%20wall%2C%20premium%20design%2C%20high%20efficiency%2C%20Japanese%20style%20interior&width=600&height=400&seq=9&orientation=landscape" alt="ダイキン S28YTVS-W" class="w-full h-48 object-cover">
+<div class="absolute top-2 left-2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">おすすめ</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold mb-2">ダイキン S28YTVS-W</h3>
+<p class="text-sm text-gray-600 mb-4">8畳～12畳向け / 2024年モデル / 高性能フィルター搭載</p>
+<div class="flex items-center mb-4">
+<span class="text-sm text-gray-500 line-through">通常価格: 158,000円</span>
+<span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">在庫あり</span>
+</div>
+<div class="text-xl font-bold text-red-600 mb-4">128,000円 <span class="text-sm font-normal text-gray-600">（税込・工事費込）</span></div>
+<a href="#contact" class="block w-full bg-primary hover:bg-blue-700 text-white text-center px-4 py-2 rounded-button transition duration-300">見積り依頼</a>
+</div>
+</div>
+<!-- 商品3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Modern%20white%20Mitsubishi%20air%20conditioner%20unit%20mounted%20on%20wall%2C%20advanced%20design%2C%20AI-powered%2C%20Japanese%20style%20interior&width=600&height=400&seq=10&orientation=landscape" alt="三菱 MSZ-ZW5623S" class="w-full h-48 object-cover">
+<div class="absolute top-2 left-2 bg-orange-500 text-white px-3 py-1 rounded-full text-sm">特価品</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold mb-2">三菱 MSZ-ZW5623S</h3>
+<p class="text-sm text-gray-600 mb-4">14畳～18畳向け / 2023年モデル / AI温度コントロール</p>
+<div class="flex items-center mb-4">
+<span class="text-sm text-gray-500 line-through">通常価格: 195,000円</span>
+<span class="ml-2 bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">残り1台</span>
+</div>
+<div class="text-xl font-bold text-red-600 mb-4">158,000円 <span class="text-sm font-normal text-gray-600">（税込・工事費込）</span></div>
+<a href="#contact" class="block w-full bg-primary hover:bg-blue-700 text-white text-center px-4 py-2 rounded-button transition duration-300">見積り依頼</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<h3 class="text-xl font-bold mb-4">上記以外のエアコンもご相談ください</h3>
+<p class="text-gray-600 mb-6">旧モデルや特価品、お客様のご希望に合わせたエアコンを多数取り扱っております。<br>予算やお部屋の広さに合わせて最適なエアコンをご提案します。</p>
+<a href="#contact" class="inline-block bg-secondary hover:bg-orange-500 text-white px-8 py-4 rounded-button font-medium shadow-lg transition duration-300">無料でお見積り</a>
+</div>
+</div>
+</section>
+<!-- エアコン設置工事セクション -->
+<section id="installation-work-section" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">エアコン設置工事価格と内容</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">すでにエアコン本体をお持ちの方、ネットや家電量販店で購入された方も安心。<br>プロの技術で丁寧に設置いたします。</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-1/2">
+<div class="bg-gray-50 rounded-lg p-8 h-full">
+<h3 class="text-xl font-bold mb-6">標準工事内容</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>室内機・室外機の設置</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>壁穴あけ工事（木造・軽鉄骨等）</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>配管工事（冷媒管・ドレンホース 4m まで）</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>断熱材・化粧テープ処理</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>真空引き・エアパージ作業</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>動作確認・リモコン設定</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-checkbox-circle-fill"></i>
+</div>
+<span>簡易説明・清掃</span>
+</li>
+</ul>
+<div class="mt-8 p-4 bg-white rounded-lg border border-gray-200">
+<div class="text-center">
+<p class="text-lg font-bold text-primary mb-2">標準工事価格</p>
+<p class="text-3xl font-bold">22,000円</p>
+<p class="text-sm text-gray-600 mt-2">※弊社で購入された方の設置工事は10％～割引致します</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-gray-50 rounded-lg p-8 h-full">
+<h3 class="text-xl font-bold mb-6">追加工事オプション</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
+<i class="ri-add-circle-fill"></i>
+</div>
+<div>
+<p class="font-medium">配管延長工事</p>
+<p class="text-sm text-gray-600">標準4mを超える場合、1mあたり2,000円</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
+<i class="ri-add-circle-fill"></i>
+</div>
+<div>
+<p class="font-medium">室内外化粧カバー</p>
+<p class="text-sm text-gray-600">配管カバー取付 3,000円?</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
+<i class="ri-add-circle-fill"></i>
+</div>
+<div>
+<p class="font-medium">専用コンセント増設</p>
+<p class="text-sm text-gray-600">電源がない場合 5,000円?</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
+<i class="ri-add-circle-fill"></i>
+</div>
+<div>
+<p class="font-medium">ブレーカー交換</p>
+<p class="text-sm text-gray-600">容量不足の場合 8,000円?</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
+<i class="ri-add-circle-fill"></i>
+</div>
+<div>
+<p class="font-medium">高所作業</p>
+<p class="text-sm text-gray-600">2階以上の場合 3,000円?</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-secondary mr-2 mt-1">
+<i class="ri-add-circle-fill"></i>
+</div>
+<div>
+<p class="font-medium">石膏調査</p>
+<p class="text-sm text-gray-600">必要な場合 5,000円</p>
+</div>
+</li>
+</ul>
+<div class="mt-8 p-4 bg-blue-50 rounded-lg">
+<p class="text-sm text-gray-700">追加工事が必要かどうかは、現地調査後にご案内いたします。<br>事前見積りで安心、追加料金の心配なし！</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- 選ばれる理由セクション -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">選ばれる<span class="text-primary">4</span>つの理由</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">北見市で多くのお客様に選ばれ続ける理由をご紹介します。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- 理由1 -->
+<div class="bg-gray-50 rounded-lg p-6 shadow-md">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
+<i class="ri-verified-badge-fill ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-3">有資格者による施工</h3>
+<p class="text-gray-600 text-center">電気工事士第二種、一般建築物石綿含有建材調査者、石綿作業主任者の資格保有</p>
+</div>
+<!-- 理由2 -->
+<div class="bg-gray-50 rounded-lg p-6 shadow-md">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
+<i class="ri-bar-chart-fill ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-3">豊富な施工実績</h3>
+<p class="text-gray-600 text-center">2024年度のエアコン設置実績100台以上。安心と信頼の技術力</p>
+</div>
+<!-- 理由3 -->
+<div class="bg-gray-50 rounded-lg p-6 shadow-md">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-3">大手住宅メーカー経験</h3>
+<p class="text-gray-600 text-center">北見市の大手住宅メーカーでの施工経験を活かした確かな技術</p>
+</div>
+<!-- 理由4 -->
+<div class="bg-gray-50 rounded-lg p-6 shadow-md">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mb-4 mx-auto">
+<i class="ri-time-fill ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-3">柔軟な対応時間</h3>
+<p class="text-gray-600 text-center">営業時間外や対応地域外の予約も相談可能。お客様のご都合に合わせます</p>
+</div>
+</div>
+<div class="mt-16 bg-gray-50 rounded-lg p-8 shadow-lg">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-8 md:mb-0">
+<h3 class="text-2xl font-bold mb-4">お客様満足度98.5%</h3>
+<p class="text-gray-600 mb-6">過去1年間に当社でエアコン設置をご依頼いただいたお客様へのアンケート結果です。丁寧な作業と親切な対応で、多くのお客様にご満足いただいております。</p>
+<div class="flex items-center mb-4">
+<div class="w-32 text-sm font-medium">満足度</div>
+<div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 98.5%"></div>
+</div>
+<div class="w-16 text-right text-sm font-medium">98.5%</div>
+</div>
+<div class="flex items-center mb-4">
+<div class="w-32 text-sm font-medium">価格満足度</div>
+<div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 94.2%"></div>
+</div>
+<div class="w-16 text-right text-sm font-medium">94.2%</div>
+</div>
+<div class="flex items-center mb-4">
+<div class="w-32 text-sm font-medium">対応速度</div>
+<div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 97.8%"></div>
+</div>
+<div class="w-16 text-right text-sm font-medium">97.8%</div>
+</div>
+<div class="flex items-center">
+<div class="w-32 text-sm font-medium">再利用意向</div>
+<div class="flex-1 h-5 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 99.1%"></div>
+</div>
+<div class="w-16 text-right text-sm font-medium">99.1%</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 md:pl-8">
+<div class="bg-white p-6 rounded-lg shadow-md">
+<h4 class="text-lg font-bold mb-4">お客様の声</h4>
+<div class="space-y-4">
+<div class="border-l-4 border-primary pl-4 py-2">
+<p class="text-gray-600 italic mb-2">「急な故障で困っていたところ、当日中に対応してくださり助かりました。作業も丁寧で、使い方まで詳しく説明していただきました。」</p>
+<p class="text-sm font-medium">北見市 佐藤様（42歳）</p>
+</div>
+<div class="border-l-4 border-primary pl-4 py-2">
+<p class="text-gray-600 italic mb-2">「他店よりも良心的な価格で、しかも工事の仕上がりが非常に綺麗でした。次回も必ずこちらにお願いします。」</p>
+<p class="text-sm font-medium">網走市 鈴木様（35歳）</p>
+</div>
+<div class="border-l-4 border-primary pl-4 py-2">
+<p class="text-gray-600 italic mb-2">「北海道の厳しい冬に備えて設置をお願いしました。電気代の節約方法など、親身になってアドバイスいただき感謝しています。」</p>
+<p class="text-sm font-medium">美幌町 高橋様（58歳）</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 施工事例ギャラリー -->
+<section id="works" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">施工事例</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">これまでに手がけた施工事例の一部をご紹介します。様々な住宅タイプやニーズに合わせた設置実績があります。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- 事例1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Before%20and%20after%20air%20conditioner%20installation%20in%20Japanese%20living%20room%2C%20modern%20design%2C%20clean%20installation%2C%20professional%20work%2C%20visible%20improvement&width=600&height=400&seq=5&orientation=landscape" alt="マンションリビングの設置事例" class="w-full h-64 object-cover object-top">
+<div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 rounded-br-lg">Before & After</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold mb-2">マンションリビングの設置事例</h3>
+<p class="text-gray-600 mb-4">北見市内のマンションにおける新規設置工事。壁の色に合わせた配管カバーで美観を損なわない仕上がりに。</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">新規設置</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">ダイキン製</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">マンション</span>
+</div>
+<div class="flex justify-center items-center">
+<span class="text-gray-700 font-medium">施工費用: 85,000円</span>
+</div>
+</div>
+</div>
+<!-- 事例2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Before%20and%20after%20air%20conditioner%20installation%20in%20Japanese%20bedroom%2C%20modern%20design%2C%20clean%20installation%2C%20professional%20work%2C%20visible%20improvement&width=600&height=400&seq=6&orientation=landscape" alt="戸建て寝室の設置事例" class="w-full h-64 object-cover object-top">
+<div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 rounded-br-lg">Before & After</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold mb-2">戸建て寝室の設置事例</h3>
+<p class="text-gray-600 mb-4">網走市の戸建て住宅の寝室に設置。静音性の高いモデルを選定し、快適な睡眠環境を実現。</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">新規設置</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">三菱電機製</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">戸建て</span>
+</div>
+<div class="flex justify-center items-center">
+<span class="text-gray-700 font-medium">施工費用: 78,000円</span>
+</div>
+</div>
+</div>
+<!-- 事例3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Before%20and%20after%20air%20conditioner%20replacement%20in%20Japanese%20kitchen%2C%20modern%20design%2C%20clean%20installation%2C%20professional%20work%2C%20visible%20improvement&width=600&height=400&seq=7&orientation=landscape" alt="店舗エアコン交換事例" class="w-full h-64 object-cover object-top">
+<div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 rounded-br-lg">Before & After</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold mb-2">店舗エアコン交換事例</h3>
+<p class="text-gray-600 mb-4">北見市内の飲食店における業務用エアコンの交換工事。営業時間外の夜間工事で店舗運営に影響なく完了。</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">交換工事</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">パナソニック製</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">商業施設</span>
+</div>
+<div class="flex justify-center items-center">
+<span class="text-gray-700 font-medium">施工費用: 120,000円</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#contact" class="inline-block bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-button font-medium shadow-lg transition duration-300 whitespace-nowrap">
+お見積り・ご相談はこちら
+</a>
+</div>
+</div>
+</section>
+<!-- 料金・見積もりセクション -->
+<section id="price" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">料金案内</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">明朗会計を心がけ、追加料金のない分かりやすい料金体系をご用意しています。</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-1/2">
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md h-full">
+                    <h3 class="text-xl font-bold mb-6 text-center">標準工事料金</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-4 py-3 text-sm font-medium text-gray-700">エアコンタイプ</th>
+                                    <th class="px-4 py-3 text-sm font-medium text-gray-700">標準工事料金</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">壁掛け 6畳?8畳用</td>
+                                    <td class="px-4 py-3 font-medium">15,000円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">壁掛け 10畳?14畳用</td>
+                                    <td class="px-4 py-3 font-medium">18,000円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">壁掛け 16畳?20畳用</td>
+                                    <td class="px-4 py-3 font-medium">22,000円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">天井埋込型</td>
+                                    <td class="px-4 py-3 font-medium">35,000円</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">床置型</td>
+                                    <td class="px-4 py-3 font-medium">20,000円</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="font-bold mb-2">標準工事に含まれるもの</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span>室内機・室外機の設置</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span>冷媒配管（～4m）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span>ドレンホース・配線</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span>穴あけ工事（木造壁）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span>試運転・動作確認</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md h-full">
+                    <h3 class="text-xl font-bold mb-6 text-center">オプション工事料金</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-4 py-3 text-sm font-medium text-gray-700">オプション内容</th>
+                                    <th class="px-4 py-3 text-sm font-medium text-gray-700">追加料金</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">配管延長（1mあたり）</td>
+                                    <td class="px-4 py-3 font-medium">3,000円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">コンクリート壁穴あけ</td>
+                                    <td class="px-4 py-3 font-medium">8,000円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">配管カバー（1mあたり）</td>
+                                    <td class="px-4 py-3 font-medium">2,500円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">ドレンポンプ設置</td>
+                                    <td class="px-4 py-3 font-medium">15,000円</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3">高所作業（3F以上）</td>
+                                    <td class="px-4 py-3 font-medium">5,000円</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">既存エアコン取り外し</td>
+                                    <td class="px-4 py-3 font-medium">5,000円</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p class="text-sm text-gray-700">※料金は税込表示です。現場状況により変動する場合があります。正確な料金は現地調査後にお見積りいたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- お支払い方法セクション -->
+<section id="payment" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">お支払い方法</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">お客様のご都合に合わせて、様々なお支払い方法をご用意しております。</p>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-lg max-w-2xl mx-auto">
+            <div class="flex justify-center gap-16 mb-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-money-yen-circle-fill ri-3x text-gray-700"></i>
+                    </div>
+                    <span class="font-medium text-lg">現金</span>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-bank-fill ri-3x text-gray-700"></i>
+                    </div>
+                    <span class="font-medium text-lg">銀行振込</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- お問い合わせセクション -->
+<section id="contact" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">お問い合わせ</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">エアコンの購入・設置に関するご質問やお見積りのご依頼は、お電話、LINEまたはフォームよりお気軽にお問い合わせください。</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-lg shadow-lg p-8 h-full">
+<h3 class="text-xl font-bold mb-6">お問い合わせフォーム</h3>
+<form>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2">お名前 <span class="text-red-500">*</span></label>
+<input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2">電話番号 <span class="text-red-500">*</span></label>
+<input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2">メールアドレス</label>
+<input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary">
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2">ご住所</label>
+<input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="北見市○○町1-2-3">
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2">お問い合わせ内容 <span class="text-red-500">*</span></label>
+<select class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8 appearance-none bg-white" style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>'); background-repeat: no-repeat; background-position: right 10px center; background-size: 16px;" required>
+<option value="">選択してください</option>
+<option value="estimate">お見積り依頼</option>
+<option value="product">エアコン本体について</option>
+<option value="installation">設置工事について</option>
+<option value="other">その他</option>
+</select>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 text-sm font-medium mb-2">詳細内容</label>
+<textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary h-32" placeholder="ご質問やご要望の詳細をお書きください"></textarea>
+</div>
+<div class="mb-6">
+<label class="custom-checkbox">
+<input type="checkbox" required>
+<span class="checkmark"></span>
+<span class="text-sm">個人情報の取り扱いに同意する</span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-button shadow-md transition duration-300 whitespace-nowrap">
+送信する
+</button>
+</form>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+<h3 class="text-xl font-bold mb-6">お電話でのお問い合わせ</h3>
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-full text-white mr-4">
+<i class="ri-phone-fill ri-2x"></i>
+</div>
+<div>
+<p class="text-sm text-gray-600">お気軽にお電話ください</p>
+<a href="tel:0157-00-0000" class="text-2xl font-bold text-primary hover:text-blue-700">070-4080-0965</a>
+</div>
+</div>
+<div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+<p class="text-sm text-gray-700">※受付時間：9:00～19:00（年中無休）営業時間外のお電話は翌日の折り返しになる場合がぼざいます</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+<h3 class="text-xl font-bold mb-6">LINE公式アカウント</h3>
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-[#06C755] rounded-full text-white mr-4">
+<i class="ri-line-fill ri-2x"></i>
+</div>
+<div>
+<p class="text-sm text-gray-600">LINEでカンタン相談・見積もり</p>
+<p class="text-lg font-bold">友だち追加で特典あり！</p>
+<p class="text-sm text-gray-600">24時間いつでもメッセージOK</p>
+</div>
+</div>
+<a href="#" class="block w-full bg-[#06C755] hover:bg-[#05a648] text-white text-center px-6 py-3 rounded-button font-medium shadow-md transition duration-300 whitespace-nowrap">
+LINE公式アカウントを追加する
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- よくある質問 -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">よくある質問</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">お客様からよくいただくご質問とその回答をまとめました。</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="space-y-4" id="faq-container">
+<!-- FAQ項目1 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-1">
+<span class="font-medium text-left">エアコン設置の見積もりは無料ですか？</span>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line faq-icon"></i>
+</div>
+</button>
+<div id="faq-1" class="faq-content hidden p-4 bg-white">
+<p class="text-gray-600">はい、現地調査とお見積りは無料で承っております。お客様のご自宅の状況を確認し、最適なエアコンと設置方法をご提案いたします。お気軽にお問い合わせください。</p>
+</div>
+</div>
+<!-- FAQ項目2 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-2">
+<span class="font-medium text-left">エアコン設置の工事期間はどのくらいですか？</span>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line faq-icon"></i>
+</div>
+</button>
+<div id="faq-2" class="faq-content hidden p-4 bg-white">
+<p class="text-gray-600">標準的な壁掛けエアコンの設置工事は、通常2時間程度で完了します。ただし、コンセント増設工事や特殊な工事が必要な場合は、それ以上の時間がかかることがあります。</p>
+</div>
+</div>
+<!-- FAQ項目3 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-3">
+<span class="font-medium text-left">どのメーカーのエアコンを取り扱っていますか？</span>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line faq-icon"></i>
+</div>
+</button>
+<div id="faq-3" class="faq-content hidden p-4 bg-white">
+<p class="text-gray-600">ダイキン、パナソニック、三菱電機、日立、シャープなど、主要メーカーのエアコンを幅広く取り扱っております。お客様のご予算やご要望に合わせて、最適な機種をご提案いたします。</p>
+</div>
+</div>
+<!-- FAQ項目4 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-4">
+<span class="font-medium text-left">古いエアコンの取り外しと処分もお願いできますか？</span>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line faq-icon"></i>
+</div>
+</button>
+<div id="faq-4" class="faq-content hidden p-4 bg-white">
+<p class="text-gray-600">はい、古いエアコンの取り外しと適正処分も承っております。リサイクル料金と収集運搬料金が別途かかりますが、法令に基づいた適切な処理を行いますのでご安心ください。</p>
+</div>
+</div>
+<!-- FAQ項目5 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-button w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="faq-5">
+<span class="font-medium text-left">設置後の保証はありますか？</span>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line faq-icon"></i>
+</div>
+</button>
+<div id="faq-5" class="faq-content hidden p-4 bg-white">
+<p class="text-gray-600">当社の設置工事には1年間の工事保証が付いています。工事に起因する不具合が発生した場合は、無償で修理対応いたします。また、エアコン本体はメーカー保証（通常1年）が適用されます。延長保証プランもご用意しておりますので、ご希望の方はお問い合わせください。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 会社概要 -->
+<section id="about" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">私たちの思い</h2>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-2/2">
+<div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+<p class="text-gray-600 mb-4">北海道の厳しい気候の中で、快適な室内環境を提供することが私たちの使命です。夏の暑さ、冬の寒さから皆様を守り、心地よい空間づくりをサポートします。</p>
+<p class="text-gray-600 mb-4">地域密着型の企業として、お客様一人ひとりのニーズに丁寧に対応し、信頼関係を築くことを大切にしています。「ただエアコンを売る・設置する」だけでなく、お客様の生活に寄り添ったサービスを提供することが私たちの誇りです。</p>
+<p class="text-gray-600">これからも技術力の向上と誠実なサービスを通じて、北見市とその周辺地域の皆様の快適な暮らしに貢献してまいります。</p>
+</div>
+<div class="bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-xl font-bold mb-6">取扱メーカー</h3>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<span class="text-sm text-center">ダイキン</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<span class="text-sm text-center">パナソニック</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<span class="text-sm text-center">三菱電機</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<span class="text-sm text-center">日立</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<span class="text-sm text-center">シャープ</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center text-gray-700 mb-2">
+<i class="ri-building-2-fill ri-2x"></i>
+</div>
+<span class="text-sm text-center">東芝</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="py-16 bg-primary text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-6">快適な空間づくりは、私たちにお任せください</h2>
+<p class="text-lg mb-8">エアコンの販売から設置、メンテナンスまで、<br>北見市のエアコン専門店がトータルサポートいたします。</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="tel:0157-00-0000" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-button font-medium shadow-lg transition duration-300 flex items-center justify-center whitespace-nowrap">
+<div class="w-6 h-6 flex items-center justify-center mr-2">
+<i class="ri-phone-fill"></i>
+</div>
+<span>お電話でのお問い合わせ</span>
+</a>
+<a href="#contact" class="bg-secondary hover:bg-orange-500 text-white px-8 py-4 rounded-button font-medium shadow-lg transition duration-300 flex items-center justify-center whitespace-nowrap">
+<div class="w-6 h-6 flex items-center justify-center mr-2">
+<i class="ri-mail-fill"></i>
+</div>
+<span>無料お見積りを依頼する</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- フッター -->
+<footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-wrap -mx-4">
+<div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+<h3 class="text-xl font-['Pacifico'] mb-4">エアコンラボ北見店</h3>
+<p class="text-gray-300 mb-4">北見市を中心に、エアコンの販売・設置・メンテナンスを行う地域密着型の専門店です。</p>
+<div class="flex space-x-4">
+
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill"></i>
+</div>
+
+
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-fill"></i>
+</div>
+
+
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-fill"></i>
+</div>
+
+
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-line-fill"></i>
+</div>
+
+</div>
+</div>
+<div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+<h3 class="text-lg font-bold mb-4">サービス</h3>
+<ul class="space-y-2">
+<li><a href="#services" class="text-gray-300 hover:text-white">エアコン販売</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white">設置工事</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white">メンテナンス・修理</a></li>
+<li><a href="#price" class="text-gray-300 hover:text-white">料金案内</a></li>
+<li><a href="#works" class="text-gray-300 hover:text-white">施工事例</a></li>
+</ul>
+</div>
+
+<div class="border-t border-gray-700 mt-8 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm text-gray-400">&copy; 2025 北見エアコン販売・設置 All Rights Reserved.</p>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="text-sm text-gray-400 hover:text-white">プライバシーポリシー</a>
+<a href="#" class="text-sm text-gray-400 hover:text-white">特定商取引法に基づく表記</a>
+<a href="#" class="text-sm text-gray-400 hover:text-white">サイトマップ</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- フローティングCTA -->
+<div class="floating-cta">
+<div class="flex flex-col space-y-2">
+<a href="tel:0157-00-0000" class="bg-primary hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-lg transition duration-300 flex items-center whitespace-nowrap">
+<div class="w-6 h-6 flex items-center justify-center mr-2">
+<i class="ri-phone-fill"></i>
+</div>
+<span>お電話</span>
+</a>
+<a href="#line" class="bg-[#06C755] hover:bg-[#05a648] text-white px-4 py-3 rounded-full shadow-lg transition duration-300 flex items-center whitespace-nowrap">
+<div class="w-6 h-6 flex items-center justify-center mr-2">
+<i class="ri-line-fill"></i>
+</div>
+<span>LINE</span>
+</a>
+</div>
+</div>
+<!-- スクリプト -->
+<script src="script.js"></script>
 </body>
 </html>
