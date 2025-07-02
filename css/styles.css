@@ -66,6 +66,7 @@ textarea:focus {
 .custom-checkbox input:checked ~ .checkmark:after {
   display: block;
 }
+/* 統合されたチェックマークスタイル */
 .custom-checkbox .checkmark:after {
   left: 7px;
   top: 3px;
