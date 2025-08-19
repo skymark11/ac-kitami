@@ -1,0 +1,7 @@
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_AllCacheMode
+
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.ac-kitami\.com [NC]
+RewriteRule ^(.*)$ https://ac-kitami.com/$1 [L,R=301]
