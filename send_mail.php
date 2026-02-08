@@ -1,10 +1,9 @@
 <?php
-header('Content-Type: application/json; charset=UTF-8');
+// 文字エンコーディング設定
+mb_language("Japanese");
+mb_internal_encoding("UTF-8");
 
-// CORS対応（必要に応じて）
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Content-Type: application/json; charset=UTF-8');
 
 // POSTリクエストのみ許可
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -14,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 送信先メールアドレス（管理者）
-$admin_email = 'shishido@js-farty.jp';
+$admin_email = 'info@ac-kitami.com';
 $admin_name = 'エアコンラボ北見店';
 
 // フォームデータの取得とサニタイズ
@@ -70,91 +69,88 @@ $datetime = date('Y年m月d日 H:i:s');
 
 // 管理者向けメール内容
 $admin_subject = '【エアコンラボ北見店】新しいお問い合わせ';
-$admin_body = "エアコンラボ北見店のWebサイトより、新しいお問い合わせがありました。\n\n";
-$admin_body .= "■ 受信日時: {$datetime}\n";
-$admin_body .= "■ お名前: {$name}\n";
-$admin_body .= "■ 電話番号: {$phone}\n";
-$admin_body .= "■ メールアドレス: " . ($email ? $email : '未入力') . "\n";
-$admin_body .= "■ ご住所: " . ($address ? $address : '未入力') . "\n";
-$admin_body .= "■ お問い合わせ内容: {$inquiry_type_jp}\n";
-$admin_body .= "■ 詳細内容:\n" . ($message ? $message : '未入力') . "\n\n";
-$admin_body .= "─────────────────────────\n";
-$admin_body .= "※このメールは自動送信です。\n";
-$admin_body .= "お客様への対応をお願いいたします。\n";
+$admin_body = "エアコンラボ北見店のWebサイトより、新しいお問い合わせがありました。\r\n\r\n";
+$admin_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r\n";
+$admin_body .= "■ お名前\r\n";
+$admin_body .= $name . "\r\n\r\n";
+$admin_body .= "■ 電話番号\r\n";
+$admin_body .= $phone . "\r\n\r\n";
+$admin_body .= "■ メールアドレス\r\n";
+$admin_body .= (!empty($email) ? $email : '（未入力）') . "\r\n\r\n";
+$admin_body .= "■ ご住所\r\n";
+$admin_body .= (!empty($address) ? $address : '（未入力）') . "\r\n\r\n";
+$admin_body .= "■ お問い合わせ内容\r\n";
+$admin_body .= $inquiry_type_jp . "\r\n\r\n";
+$admin_body .= "■ 詳細内容\r\n";
+$admin_body .= (!empty($message) ? $message : '（未入力）') . "\r\n\r\n";
+$admin_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r\n";
+$admin_body .= "送信日時: " . $datetime . "\r\n";
 
 // お客様向け自動返信メール内容
 $customer_subject = '【エアコンラボ北見店】お問い合わせありがとうございます';
-$customer_body = "{$name} 様\n\n";
-$customer_body .= "この度は、エアコンラボ北見店にお問い合わせいただき、誠にありがとうございます。\n";
-$customer_body .= "以下の内容でお問い合わせを承りました。\n\n";
-$customer_body .= "■ 受信日時: {$datetime}\n";
-$customer_body .= "■ お名前: {$name}\n";
-$customer_body .= "■ 電話番号: {$phone}\n";
-$customer_body .= "■ メールアドレス: " . ($email ? $email : '未入力') . "\n";
-$customer_body .= "■ ご住所: " . ($address ? $address : '未入力') . "\n";
-$customer_body .= "■ お問い合わせ内容: {$inquiry_type_jp}\n";
-$customer_body .= "■ 詳細内容:\n" . ($message ? $message : '未入力') . "\n\n";
-$customer_body .= "担当者より2営業日以内にご連絡させていただきます。\n";
-$customer_body .= "お急ぎの場合は、お電話（070-4080-0965）にてお問い合わせください。\n\n";
-$customer_body .= "今後ともエアコンラボ北見店をよろしくお願いいたします。\n\n";
-$customer_body .= "─────────────────────────\n";
-$customer_body .= "エアコンラボ北見店\n";
-$customer_body .= "電話: 070-4080-0965\n";
-$customer_body .= "営業時間: 9:00～19:00（年中無休）\n";
-$customer_body .= "─────────────────────────\n";
+$customer_body = $name . " 様\r\n\r\n";
+$customer_body .= "この度は、エアコンラボ北見店にお問い合わせいただき、誠にありがとうございます。\r\n";
+$customer_body .= "以下の内容でお問い合わせを承りました。\r\n\r\n";
+$customer_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r\n";
+$customer_body .= "■ お名前\r\n";
+$customer_body .= $name . "\r\n\r\n";
+$customer_body .= "■ 電話番号\r\n";
+$customer_body .= $phone . "\r\n\r\n";
+$customer_body .= "■ メールアドレス\r\n";
+$customer_body .= $email . "\r\n\r\n";
+$customer_body .= "■ ご住所\r\n";
+$customer_body .= (!empty($address) ? $address : '（未入力）') . "\r\n\r\n";
+$customer_body .= "■ お問い合わせ内容\r\n";
+$customer_body .= $inquiry_type_jp . "\r\n\r\n";
+$customer_body .= "■ 詳細内容\r\n";
+$customer_body .= (!empty($message) ? $message : '（未入力）') . "\r\n\r\n";
+$customer_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r\n\r\n";
+$customer_body .= "担当者より折り返しご連絡させていただきますので、\r\n";
+$customer_body .= "今しばらくお待ちくださいますようお願い申し上げます。\r\n\r\n";
+$customer_body .= "お急ぎの場合は、お電話でもご相談を承っております。\r\n";
+$customer_body .= "TEL: 070-4080-0965\r\n\r\n";
+$customer_body .= "※このメールは自動送信されています。\r\n";
+$customer_body .= "※このメールに返信いただいても対応できませんので、ご了承ください。\r\n\r\n";
+$customer_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r\n";
+$customer_body .= "エアコンラボ北見店\r\n";
+$customer_body .= "TEL: 070-4080-0965\r\n";
+$customer_body .= "営業時間: 9:00～19:00（年中無休）\r\n";
+$customer_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r\n";
 
-// メールヘッダー設定
-$headers_admin = [];
-$headers_admin[] = 'From: ' . mb_encode_mimeheader($admin_name) . ' <' . $admin_email . '>';
-$headers_admin[] = 'Reply-To: ' . ($email ? $email : $admin_email);
-$headers_admin[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers_admin[] = 'Content-Transfer-Encoding: 8bit';
+// メールヘッダー（管理者宛）
+$headers_admin = "From: " . mb_encode_mimeheader("エアコンラボ北見店 お問い合わせフォーム", "UTF-8") . " <info@ac-kitami.com>\r\n";
+$headers_admin .= "Reply-To: " . (!empty($email) ? $email : "info@ac-kitami.com") . "\r\n";
+$headers_admin .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers_admin .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers_admin .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-$headers_customer = [];
-$headers_customer[] = 'From: ' . mb_encode_mimeheader($admin_name) . ' <' . $admin_email . '>';
-$headers_customer[] = 'Reply-To: ' . $admin_email;
-$headers_customer[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers_customer[] = 'Content-Transfer-Encoding: 8bit';
+// メールヘッダー（お客様宛）
+$headers_customer = "From: " . mb_encode_mimeheader("エアコンラボ北見店", "UTF-8") . " <info@ac-kitami.com>\r\n";
+$headers_customer .= "Reply-To: info@ac-kitami.com\r\n";
+$headers_customer .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers_customer .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers_customer .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-// メール送信フラグ
-$admin_sent = false;
-$customer_sent = false;
+// 管理者宛メール送信
+$mail_sent_admin = mb_send_mail($admin_email, $admin_subject, $admin_body, $headers_admin);
 
-try {
-    // 管理者にメール送信
-    $admin_sent = mb_send_mail(
-        $admin_email,
-        $admin_subject,
-        $admin_body,
-        implode("\r\n", $headers_admin)
-    );
+// お客様への自動返信メール（メールアドレスが入力されている場合のみ）
+$mail_sent_customer = true;
+if (!empty($email)) {
+    $mail_sent_customer = mb_send_mail($email, $customer_subject, $customer_body, $headers_customer);
+}
 
-    // お客様に自動返信メール送信（メールアドレスが入力されている場合のみ）
-    if (!empty($email)) {
-        $customer_sent = mb_send_mail(
-            $email,
-            $customer_subject,
-            $customer_body,
-            implode("\r\n", $headers_customer)
-        );
-    } else {
-        $customer_sent = true; // メールアドレス未入力の場合は成功扱い
-    }
-
-    if ($admin_sent && $customer_sent) {
-        echo json_encode([
-            'success' => true,
-            'message' => 'お問い合わせありがとうございます。確認メールを送信いたしました。当日～2営業日以内にご連絡させていただきます。'
-        ]);
-    } else {
-        throw new Exception('メール送信に失敗しました。');
-    }
-
-} catch (Exception $e) {
-    error_log('Contact form error: ' . $e->getMessage());
+// 結果を返す
+if ($mail_sent_admin && $mail_sent_customer) {
+    echo json_encode([
+        'success' => true,
+        'message' => 'お問い合わせを受け付けました。ご連絡ありがとうございます。'
+    ]);
+} else {
+    http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => '送信に失敗しました。お手数ですが、お電話（070-4080-0965）にてお問い合わせください。'
+        'message' => 'メール送信に失敗しました。お電話でのお問い合わせをお願いいたします。'
     ]);
 }
 ?>
