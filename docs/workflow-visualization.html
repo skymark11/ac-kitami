@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エアコンラボ北見店 - プロジェクト構造 視覚化</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans JP', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+  }
+
+  /* ヘッダー */
+  .page-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 1px solid #334155;
+    padding: 24px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .page-header h1 {
+    font-size: 1.5rem;
+    color: #f1f5f9;
+    margin-bottom: 4px;
+  }
+  .page-header p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  /* ナビゲーション */
+  .nav-bar {
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+    padding: 0 32px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    position: sticky;
+    top: 68px;
+    z-index: 99;
+  }
+  .nav-bar a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-bar a:hover, .nav-bar a.active {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+  }
+
+  /* メインコンテンツ */
+  .main { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+  /* セクション */
+  .diagram-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-number {
+    background: #3b82f6;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .section-title { font-size: 1.15rem; font-weight: 600; color: #f1f5f9; }
+  .section-desc { font-size: 0.8rem; color: #94a3b8; margin-left: auto; }
+  .section-body { padding: 24px; }
+
+  /* Mermaid図 */
+  .mermaid {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    overflow-x: auto;
+  }
+  .mermaid svg { max-width: 100%; height: auto; }
+
+  /* 補足テキスト */
+  .note-box {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-left: 3px solid #3b82f6;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+  }
+  .note-box strong { color: #60a5fa; }
+
+  /* ファイルツリー */
+  .file-tree {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    overflow-x: auto;
+  }
+  .file-tree .folder { color: #60a5fa; font-weight: 600; }
+  .file-tree .file { color: #a5b4fc; }
+  .file-tree .desc { color: #64748b; }
+  .file-tree .highlight-file { color: #fbbf24; font-weight: 600; }
+
+  /* グリッド */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  /* 凡例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 18px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: #94a3b8;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+
+  /* 最終更新 */
+  .last-updated {
+    text-align: center;
+    padding: 24px;
+    color: #475569;
+    font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>エアコンラボ北見店 - プロジェクト構造 視覚化</h1>
+  <p>サイト構成・ファイル依存関係・ワークフロー・JS機能をフローチャートで一覧</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#file-tree">ファイル構成</a>
+  <a href="#site-map">サイトマップ</a>
+  <a href="#file-deps">ファイル依存関係</a>
+  <a href="#page-sections">ページ構成</a>
+  <a href="#js-flow">JS機能フロー</a>
+  <a href="#internal-links">内部リンク設計</a>
+  <a href="#roadmap">実装ロードマップ</a>
+  <a href="#case-workflow">事例追加フロー</a>
+</div>
+
+<div class="main">
+
+<!-- ========== 1. ファイル構成 ========== -->
+<div class="diagram-section" id="file-tree">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title">プロジェクト ファイル構成</div>
+    <div class="section-desc">全体のディレクトリ構造</div>
+  </div>
+  <div class="section-body">
+    <div class="file-tree">
+<span class="folder">ac-kitami/</span>
+├── <span class="highlight-file">index.html</span>            <span class="desc">← トップページ（メイン・1ページ完結型）</span>
+├── <span class="file">test.html</span>             <span class="desc">← プレビュー用（施工事例セクション改修案 3パターン）</span>
+├── <span class="file">sample.html</span>           <span class="desc">← サンプルページ</span>
+├── <span class="file">test-case.html</span>        <span class="desc">← テストケース</span>
+├── <span class="file">send_mail.php</span>         <span class="desc">← お問い合わせフォーム送信バックエンド</span>
+├── <span class="file">sitemap.xml</span>           <span class="desc">← サイトマップ（SEO）</span>
+├── <span class="file">.htaccess</span>             <span class="desc">← Apache サーバー設定</span>
+│
+├── <span class="folder">css/</span>
+│   └── <span class="highlight-file">styles.css</span>        <span class="desc">← カスタムCSS（Tailwindの補助スタイル）</span>
+│
+├── <span class="folder">js/</span>
+│   ├── <span class="highlight-file">main.js</span>           <span class="desc">← メインJS（メニュー・FAQ・フォーム・スクロール）</span>
+│   └── <span class="highlight-file">tailwind-config.js</span> <span class="desc">← Tailwind CSS カスタム設定</span>
+│
+├── <span class="folder">images/</span>
+│   ├── <span class="file">hero-bg.jpg</span>       <span class="desc">← ヒーロー背景画像</span>
+│   ├── <span class="file">map-area.png</span>      <span class="desc">← 対応エリアマップ</span>
+│   ├── <span class="file">MSZ-KXV*.jpg</span>      <span class="desc">← エアコン商品画像（4機種）</span>
+│   └── <span class="folder">works/</span>
+│       ├── <span class="file">ac001/</span>        <span class="desc">← 施工事例001 オリジナル写真</span>
+│       └── <span class="file">*.jpg</span>         <span class="desc">← SEO用日本語ファイル名の施工写真</span>
+│
+├── <span class="folder">privacy-policy/</span>
+│   └── <span class="file">index.html</span>        <span class="desc">← プライバシーポリシーページ</span>
+│
+├── <span class="folder">docs/</span>
+│   ├── <span class="highlight-file">施工事例ページ改修設計書.md</span> <span class="desc">← 詳細設計書（競合分析・SEO・ページ設計）</span>
+│   └── <span class="highlight-file">workflow-visualization.html</span> <span class="desc">← このファイル</span>
+│
+├── <span class="highlight-file">PLAN.md</span>              <span class="desc">← サイト改善プラン（Phase 1-3）</span>
+└── <span class="highlight-file">NOW.md</span>               <span class="desc">← セッション引き継ぎ（現在の状態・決定事項・次のタスク）</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 2. サイトマップ ========== -->
+<div class="diagram-section" id="site-map">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title">サイトマップ（現在 + 計画中）</div>
+    <div class="section-desc">ページ間の導線</div>
+  </div>
+  <div class="section-body">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>公開中</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>計画中</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#6b7280"></div>準備中</div>
+    </div>
+    <div class="mermaid">
+graph TB
+  subgraph LIVE["公開中ページ"]
+    TOP["<b>トップページ</b><br/>index.html<br/>━━━━━━━━━━<br/>ヒーロー / サービス / 商品<br/>施工事例 / 料金 / FAQ<br/>お問い合わせ / 会社概要"]
+    PP["プライバシーポリシー<br/>/privacy-policy/"]
+  end
+
+  subgraph PLANNED["計画中ページ"]
+    WORKS["<b>施工事例一覧</b><br/>/works/<br/>━━━━━━━━━━<br/>カード形式で全件表示<br/>フィルター機能(20件超)"]
+    W001["事例詳細 001<br/>/works/001/<br/>━━━━━━━━━━<br/>北見市三輪 戸建て<br/>エアコン増設"]
+    W002["事例詳細 002<br/>/works/002/"]
+    W003["事例詳細 003〜<br/>/works/003/"]
+    VOICE["お客様の声<br/>/voice/"]
+  end
+
+  TOP -- "もっと見る" --> WORKS
+  TOP -- "フッター" --> PP
+  WORKS --> W001
+  WORKS --> W002
+  WORKS --> W003
+  W001 -. "関連事例" .-> W002
+  W001 -- "パンくず" --> TOP
+  WORKS -- "パンくず" --> TOP
+  TOP -- "将来的に" --> VOICE
+
+  style TOP fill:#1e40af,stroke:#3b82f6,color:#fff
+  style PP fill:#374151,stroke:#6b7280,color:#fff
+  style WORKS fill:#92400e,stroke:#f59e0b,color:#fff
+  style W001 fill:#92400e,stroke:#f59e0b,color:#fff
+  style W002 fill:#92400e,stroke:#f59e0b,color:#fff
+  style W003 fill:#92400e,stroke:#f59e0b,color:#fff
+  style VOICE fill:#374151,stroke:#6b7280,color:#fff
+    </div>
+  </div>
+</div>
+
+<!-- ========== 3. ファイル依存関係 ========== -->
+<div class="diagram-section" id="file-deps">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div class="section-title">ファイル依存関係マップ</div>
+    <div class="section-desc">どのファイルが何を読み込んでいるか</div>
+  </div>
+  <div class="section-body">
+    <div class="mermaid">
+graph LR
+  subgraph HTML["HTMLページ"]
+    INDEX["index.html"]
+    PRIVACY["privacy-policy/<br/>index.html"]
+    TEST["test.html"]
+  end
+
+  subgraph CSS_JS["CSS / JS"]
+    TW["Tailwind CDN<br/>(tailwindcss.com)"]
+    TWCFG["js/tailwind-config.js<br/>━━━━━━━━━━<br/>primary: #0066cc<br/>secondary: #ff6600<br/>borderRadius設定"]
+    STYLE["css/styles.css<br/>━━━━━━━━━━<br/>ヒーロー / フローティングCTA<br/>チェックボックス / トグル<br/>プライバシーポリシー"]
+    MAIN["js/main.js<br/>━━━━━━━━━━<br/>モバイルメニュー<br/>FAQ アコーディオン<br/>フォーム送信<br/>スムーズスクロール<br/>ポップアップ制御"]
+  end
+
+  subgraph EXTERNAL["外部リソース"]
+    FONT["Google Fonts<br/>Pacifico / Noto Sans JP"]
+    ICON["Remix Icon<br/>(CDN)"]
+  end
+
+  subgraph BACKEND["バックエンド"]
+    PHP["send_mail.php<br/>━━━━━━━━━━<br/>フォームデータ受信<br/>メール送信<br/>JSON応答"]
+  end
+
+  subgraph ASSETS["画像アセット"]
+    HERO["images/hero-bg.jpg"]
+    PRODUCTS["images/MSZ-KXV*.jpg<br/>(4機種)"]
+    WORKSIMG["images/works/<br/>施工写真"]
+  end
+
+  INDEX --> TW
+  INDEX --> TWCFG
+  INDEX --> STYLE
+  INDEX --> MAIN
+  INDEX --> FONT
+  INDEX --> ICON
+  INDEX --> HERO
+  INDEX --> PRODUCTS
+  MAIN -- "fetch POST" --> PHP
+  TEST --> TW
+  TEST --> WORKSIMG
+
+  style INDEX fill:#1e40af,stroke:#3b82f6,color:#fff
+  style MAIN fill:#065f46,stroke:#10b981,color:#fff
+  style TWCFG fill:#065f46,stroke:#10b981,color:#fff
+  style STYLE fill:#7c2d12,stroke:#f97316,color:#fff
+  style PHP fill:#7c2d12,stroke:#f97316,color:#fff
+    </div>
+    <div class="note-box">
+      <strong>Tailwind CSS</strong>はCDN版を使用。<strong>tailwind-config.js</strong>でブランドカラーとborderRadiusをカスタム設定。<br/>
+      <strong>main.js</strong>がフォーム送信時に<strong>send_mail.php</strong>へPOSTリクエストを送信し、JSON応答を受け取る。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 4. ページセクション構成 ========== -->
+<div class="diagram-section" id="page-sections">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div class="section-title">index.html ページセクション構成</div>
+    <div class="section-desc">トップページの上から下への流れ</div>
+  </div>
+  <div class="section-body">
+    <div class="mermaid">
+graph TB
+  H["<b>ヘッダー</b> (sticky)<br/>ロゴ / ナビ / 電話 / LINE / モバイルメニュー"]
+  BANNER["緊急対応バナー<br/>(赤帯)"]
+  HERO["<b>ヒーローセクション</b><br/>キャッチコピー / CTA2つ<br/>購入+設置工事 | 設置工事のみ<br/>電話 / メール / LINE ボタン"]
+  AREA["<b>対応エリア</b><br/>8市町村チェックリスト + マップ画像"]
+  SVC["<b>サービス内容</b> #service-content<br/>エアコン購入 | 取付・設置工事<br/>メーカー一覧 / カード2枚"]
+  SHOP["<b>エアコン購入+取付</b> #aircon-purchase-section<br/>おすすめ4機種（三菱ズバ暖）<br/>6畳 / 8畳 / 10畳 / 14畳"]
+  INST["<b>取付工事価格</b> #installation-work-section<br/>標準工事内容 | 追加オプション"]
+  WHY["<b>選ばれる4つの理由</b><br/>有資格者 / 実績100台+ / 大手経験 / 柔軟対応<br/>満足度バー + お客様の声3件"]
+  WORKS["<b>施工事例</b> #works<br/>カード3件（現在AI画像 → 実写真に差替予定）"]
+  PRICE["<b>料金案内</b> #price<br/>標準工事料金表 | オプション料金表"]
+  PAY["<b>お支払い方法</b> #payment<br/>現金 / 銀行振込"]
+  CONTACT["<b>お問い合わせ</b> #contact<br/>フォーム / 電話 / LINE<br/>成功・エラーポップアップ"]
+  FAQ["<b>よくある質問</b><br/>アコーディオン5件"]
+  ABOUT["<b>私たちの思い</b> #about<br/>メッセージ / 取扱メーカー6社"]
+  CTA["<b>CTA帯</b><br/>電話ボタン / 見積りボタン"]
+  FOOTER["<b>フッター</b><br/>会社情報 / サービスリンク / プライバシーポリシー"]
+  FLOAT["<b>フローティングCTA</b> (fixed)<br/>電話 / LINE"]
+
+  H --> BANNER --> HERO --> AREA --> SVC --> SHOP --> INST --> WHY --> WORKS --> PRICE --> PAY --> CONTACT --> FAQ --> ABOUT --> CTA --> FOOTER
+  FLOAT -. "常時表示" .-> H
+
+  style H fill:#1e3a5f,stroke:#3b82f6,color:#fff
+  style HERO fill:#1e40af,stroke:#60a5fa,color:#fff
+  style SHOP fill:#92400e,stroke:#fbbf24,color:#fff
+  style WORKS fill:#065f46,stroke:#10b981,color:#fff
+  style CONTACT fill:#7c2d12,stroke:#f97316,color:#fff
+  style FLOAT fill:#4c1d95,stroke:#a78bfa,color:#fff
+    </div>
+    <div class="note-box">
+      <strong>#works</strong>セクションは Phase 1 で実写真に差替え、事例数を3件→6件に増加予定。<br/>
+      <strong>#contact</strong>のフォーム送信は main.js → send_mail.php の非同期処理。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 5. JS機能フロー ========== -->
+<div class="diagram-section" id="js-flow">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div class="section-title">main.js 機能フロー</div>
+    <div class="section-desc">JavaScriptの処理の流れ</div>
+  </div>
+  <div class="section-body">
+    <div class="grid-2">
+      <div>
+        <div class="mermaid">
+graph TB
+  START(["DOMContentLoaded"])
+  START --> MOBILE["<b>モバイルメニュー</b><br/>━━━━━━━━━━<br/>#mobile-menu-button<br/>クリックで #mobile-menu を toggle"]
+  START --> FAQSETUP["<b>FAQアコーディオン</b><br/>━━━━━━━━━━<br/>.faq-button 全件にイベント登録<br/>data-target の要素を toggle<br/>アイコン切替 (+ ↔ −)"]
+  START --> FORMSETUP["<b>フォーム初期化</b><br/>━━━━━━━━━━<br/>#contact-form に<br/>submit イベント登録"]
+
+  MOBILE --> M1["ハンバーガークリック"]
+  M1 --> M2["メニュー表示/非表示"]
+  M2 --> M3["メニュー内リンククリック → 自動閉じ"]
+
+  style START fill:#4c1d95,stroke:#a78bfa,color:#fff
+  style MOBILE fill:#065f46,stroke:#10b981,color:#fff
+  style FAQSETUP fill:#065f46,stroke:#10b981,color:#fff
+  style FORMSETUP fill:#065f46,stroke:#10b981,color:#fff
+        </div>
+      </div>
+      <div>
+        <div class="mermaid">
+graph TB
+  SUBMIT(["フォーム送信"])
+  SUBMIT --> DISABLE["ボタン無効化<br/>テキスト → 送信中..."]
+  DISABLE --> FETCH["fetch POST<br/>→ send_mail.php"]
+  FETCH --> CHECK{応答チェック}
+  CHECK -- "success: true" --> RESET["フォームリセット"]
+  RESET --> SUCCESS["成功ポップアップ表示<br/>ページ上部にスクロール"]
+  CHECK -- "success: false" --> ERROR["エラーポップアップ表示"]
+  FETCH -- "catch" --> NETERR["ネットワークエラー<br/>ポップアップ + 電話番号案内"]
+  SUCCESS --> RESTORE["ボタン復元"]
+  ERROR --> RESTORE
+  NETERR --> RESTORE
+
+  POPUP(["ポップアップ制御"])
+  POPUP --> BG["背景クリックで閉じる"]
+  POPUP --> ESC["ESCキーで閉じる"]
+  POPUP --> BTN["閉じるボタン"]
+
+  style SUBMIT fill:#7c2d12,stroke:#f97316,color:#fff
+  style SUCCESS fill:#065f46,stroke:#10b981,color:#fff
+  style ERROR fill:#991b1b,stroke:#ef4444,color:#fff
+  style NETERR fill:#991b1b,stroke:#ef4444,color:#fff
+  style POPUP fill:#4c1d95,stroke:#a78bfa,color:#fff
+        </div>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px;">
+      <strong>スムーズスクロール</strong>は DOMContentLoaded の外で登録。href="#..."のリンク全てに適用。ヘッダー高さ(80px)分オフセット。<br/>
+      <strong>tailwind-config.js</strong> はTailwindのカスタム色(primary/secondary)とborderRadiusを定義するのみ。ロジックなし。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 6. 内部リンク設計 ========== -->
+<div class="diagram-section" id="internal-links">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <div class="section-title">内部リンク設計（SEO ピラー/クラスター構造）</div>
+    <div class="section-desc">評価の流れとページ間の関係</div>
+  </div>
+  <div class="section-body">
+    <div class="mermaid">
+graph TB
+  subgraph PILLAR["ピラー（評価集約先）"]
+    TOP["<b>トップページ</b><br/>index.html<br/>━━━━━━━━━━<br/>KW: 北見市 エアコン<br/>北見 エアコン取付"]
+  end
+
+  subgraph CLUSTER_HUB["クラスター ハブ"]
+    WORKS_LIST["<b>施工事例一覧</b><br/>/works/<br/>━━━━━━━━━━<br/>KW: 施工事例 / 実績"]
+  end
+
+  subgraph CLUSTER_DETAIL["クラスター 詳細"]
+    W1["事例001<br/>北見市三輪 戸建て 増設<br/>KW: 北見市三輪 エアコン 増設"]
+    W2["事例002<br/>網走市 ○○ エアコン<br/>KW: 網走市 エアコン 取付"]
+    W3["事例003<br/>美幌町 ○○ エアコン<br/>KW: 美幌町 エアコン 設置"]
+    WN["事例N..."]
+  end
+
+  TOP -- "もっと見る" --> WORKS_LIST
+  WORKS_LIST -- "パンくず" --> TOP
+  WORKS_LIST --> W1
+  WORKS_LIST --> W2
+  WORKS_LIST --> W3
+  WORKS_LIST --> WN
+  W1 -- "パンくず" --> TOP
+  W2 -- "パンくず" --> TOP
+  W1 -. "関連事例" .-> W2
+  W2 -. "関連事例" .-> W3
+  W1 -- "CTA" --> TOP
+  W2 -- "CTA" --> TOP
+  W3 -- "CTA" --> TOP
+
+  style TOP fill:#1e40af,stroke:#3b82f6,color:#fff
+  style WORKS_LIST fill:#92400e,stroke:#f59e0b,color:#fff
+  style W1 fill:#065f46,stroke:#10b981,color:#fff
+  style W2 fill:#374151,stroke:#9ca3af,color:#fff
+  style W3 fill:#374151,stroke:#9ca3af,color:#fff
+  style WN fill:#374151,stroke:#6b7280,color:#94a3b8
+    </div>
+    <div class="note-box">
+      <strong>カニバリ防止ルール</strong>: 「北見市 エアコン」単体キーワードはトップページのみに使用。施工事例ページには使わない。<br/>
+      <strong>個別事例</strong>のタイトルは「地域名 + 建物種別 + 工事種別」でロングテールキーワードを狙う。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 7. 実装ロードマップ ========== -->
+<div class="diagram-section" id="roadmap">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <div class="section-title">実装ロードマップ（3フェーズ）</div>
+    <div class="section-desc">PLAN.md + 設計書に基づく</div>
+  </div>
+  <div class="section-body">
+    <div class="mermaid">
+graph LR
+  subgraph P1["Phase 1: 即実行（1-2週間）"]
+    direction TB
+    P1A["AI画像を実写真に差替<br/>（トップページ #works 3件）"]
+    P1B["事例情報を追記<br/>地域名・工事種別・メーカー"]
+    P1C["画像最適化<br/>WebP / 200KB以下"]
+    P1D["もっと見るボタン追加<br/>（リンク先は一旦 #）"]
+    P1A --> P1B --> P1C --> P1D
+  end
+
+  subgraph P2["Phase 2: 短期実装（1-2ヶ月）"]
+    direction TB
+    P2A["施工事例一覧ページ作成<br/>/works/index.html"]
+    P2B["個別事例ページ 5-10件<br/>/works/001/ 〜"]
+    P2C["パンくずリスト<br/>全ページに実装"]
+    P2D["構造化データ<br/>BreadcrumbList JSON-LD"]
+    P2E["sitemap.xml 更新<br/>Search Console 申請"]
+    P2A --> P2B --> P2C --> P2D --> P2E
+  end
+
+  subgraph P3["Phase 3: 継続運用（3ヶ月〜）"]
+    direction TB
+    P3A["新規事例を月2-5件追加"]
+    P3B["フィルター機能<br/>（20件超で実装）"]
+    P3C["お客様の声 専用ページ<br/>/voice/"]
+    P3D["順位モニタリング<br/>週次確認"]
+    P3A --> P3B --> P3C --> P3D
+  end
+
+  P1 ==> P2 ==> P3
+
+  style P1A fill:#065f46,stroke:#10b981,color:#fff
+  style P1B fill:#065f46,stroke:#10b981,color:#fff
+  style P1C fill:#065f46,stroke:#10b981,color:#fff
+  style P1D fill:#065f46,stroke:#10b981,color:#fff
+  style P2A fill:#92400e,stroke:#f59e0b,color:#fff
+  style P2B fill:#92400e,stroke:#f59e0b,color:#fff
+  style P2C fill:#92400e,stroke:#f59e0b,color:#fff
+  style P2D fill:#92400e,stroke:#f59e0b,color:#fff
+  style P2E fill:#92400e,stroke:#f59e0b,color:#fff
+  style P3A fill:#4c1d95,stroke:#a78bfa,color:#fff
+  style P3B fill:#4c1d95,stroke:#a78bfa,color:#fff
+  style P3C fill:#4c1d95,stroke:#a78bfa,color:#fff
+  style P3D fill:#4c1d95,stroke:#a78bfa,color:#fff
+    </div>
+    <div class="note-box">
+      <strong>現在の状態</strong>: Phase 1 進行中。test.html でプレビュー確認中。トップページの見せ方（案A: シンプル6件 or 案C: 注目1件+小5件）を選択待ち。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 8. 施工事例追加ワークフロー ========== -->
+<div class="diagram-section" id="case-workflow">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <div class="section-title">施工事例 追加ワークフロー</div>
+    <div class="section-desc">新しい事例を追加する手順</div>
+  </div>
+  <div class="section-body">
+    <div class="mermaid">
+graph TB
+  START(["施工完了"])
+  START --> PHOTO["<b>Step 1: 写真撮影</b><br/>━━━━━━━━━━<br/>Before写真<br/>施工中写真<br/>After写真（室内機・室外機）<br/>コンセント・配管 等"]
+  PHOTO --> SAVE["<b>Step 2: 素材フォルダに保存</b><br/>━━━━━━━━━━<br/>_素材/ac002/ 形式で保存"]
+  SAVE --> INFO["<b>Step 3: info.txt に基本情報を記入</b><br/>━━━━━━━━━━<br/>地域名 / 建物種別 / 工事内容<br/>機種名 / 施工時間 / 費用目安<br/>お客様コメント"]
+  INFO --> CLAUDE["<b>Step 4: Claude に依頼</b><br/>「ac002追加して」"]
+  CLAUDE --> GEN["<b>Step 5: Claude が自動生成</b><br/>━━━━━━━━━━<br/>画像最適化・WebP変換<br/>SEO用ファイル名で配置<br/>個別事例ページ HTML 生成<br/>構造化データ(JSON-LD)追加"]
+  GEN --> UPDATE["<b>Step 6: サイト更新</b><br/>━━━━━━━━━━<br/>一覧ページに新事例カード追加<br/>トップページの事例を更新<br/>sitemap.xml 更新"]
+  UPDATE --> VERIFY["<b>Step 7: 確認・公開</b><br/>━━━━━━━━━━<br/>ブラウザプレビュー<br/>Search Console でインデックス申請"]
+
+  style START fill:#4c1d95,stroke:#a78bfa,color:#fff
+  style PHOTO fill:#1e40af,stroke:#3b82f6,color:#fff
+  style SAVE fill:#1e40af,stroke:#3b82f6,color:#fff
+  style INFO fill:#1e40af,stroke:#3b82f6,color:#fff
+  style CLAUDE fill:#065f46,stroke:#10b981,color:#fff
+  style GEN fill:#065f46,stroke:#10b981,color:#fff
+  style UPDATE fill:#92400e,stroke:#f59e0b,color:#fff
+  style VERIFY fill:#92400e,stroke:#f59e0b,color:#fff
+    </div>
+    <div class="note-box">
+      <strong>運用ポイント</strong>: 最低限「写真 + info.txt」を用意すれば、Claude がページ生成からサイト反映まで一括対応。<br/>
+      <strong>ファイル名規則</strong>: 公開画像は「地域名-建物種別-工事内容-部位.jpg」形式（例: 北見市三輪-戸建て-エアコン増設-室内機.jpg）
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<div class="last-updated">
+  最終更新: 2026-02-20 | このファイル: docs/workflow-visualization.html
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      darkMode: true,
+      background: '#1e293b',
+      primaryColor: '#1e40af',
+      primaryTextColor: '#f1f5f9',
+      primaryBorderColor: '#3b82f6',
+      lineColor: '#64748b',
+      secondaryColor: '#065f46',
+      tertiaryColor: '#4c1d95',
+      fontFamily: 'Segoe UI, Noto Sans JP, sans-serif',
+      fontSize: '13px'
+    },
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 30,
+      rankSpacing: 50
+    }
+  });
+
+  // ナビゲーションのスムーズスクロール
+  document.querySelectorAll('.nav-bar a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offset = 130;
+        const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: pos, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // スクロール位置でナビをハイライト
+  const sections = document.querySelectorAll('.diagram-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      const top = s.offsetTop - 160;
+      if (window.pageYOffset >= top) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
