@@ -2,6 +2,20 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) - 本番環境のみ計測 -->
+    <script>
+        if (location.hostname === 'ac-kitami.com') {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0VXBBQV2PW';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0VXBBQV2PW');
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>プライバシーポリシー | 北見市エアコン販売・設置取付工事 | 地域密着のエアコン専門店</title>
     <meta name="description" content="エアコンラボ北見のプライバシーポリシーです。お客様の個人情報保護について詳しく説明しています。">
