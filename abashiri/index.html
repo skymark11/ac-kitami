@@ -27,6 +27,8 @@
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script src="../js/tailwind-config.js"></script>
 <link rel="stylesheet" href="../css/styles.css">
+<link rel="preload" as="image" href="../images/hero-bg.webp" type="image/webp">
+<link rel="preload" as="image" href="../images/hero-bg.jpg">
 <link rel="canonical" href="https://ac-kitami.com/abashiri/">
 <script type="application/ld+json">
 {
@@ -213,7 +215,7 @@
 </nav>
 
 <!-- ヒーローセクション -->
-<section class="hero-section py-16 md:py-24" style="background-image: url('../images/hero-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<section class="hero-section py-16 md:py-24" style="background-image: image-set(url('../images/hero-bg.webp') type('image/webp'), url('../images/hero-bg.jpg') type('image/jpeg')); background-image: url('../images/hero-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
   <div class="hero-overlay w-full h-full py-16 md:py-24">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center">
@@ -507,8 +509,11 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <!-- サービス1 -->
 <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Brand%20new%20air%20conditioner%20units%20in%20boxes%2C%20different%20models%20and%20sizes%2C%20clean%20modern%20display%20in%20showroom%2C%20high%20quality%20products%2C%20Japanese%20style%2C%20professional%20presentation&width=600&height=400&seq=2&orientation=landscape" alt="エアコン販売" class="w-full h-full object-cover object-top">
+<div class="bg-gray-100">
+<picture>
+<source srcset="../images/service-purchase.webp" type="image/webp">
+<img src="../images/service-purchase.jpg" alt="エアコン販売" class="w-full h-auto" width="800" height="207" loading="lazy">
+</picture>
 </div>
 <div class="p-6">
 <div id="aircon-sales" class="bg-white p-6 rounded-lg shadow-md">
@@ -527,8 +532,11 @@
 </div>
 <!-- サービス2 -->
 <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Professional%20technician%20installing%20air%20conditioner%20on%20wall%2C%20tools%2C%20ladder%2C%20careful%20installation%20process%2C%20clean%20modern%20Japanese%20apartment%2C%20detailed%20work%2C%20professional%20service&width=600&height=400&seq=3&orientation=landscape" alt="取り付け・設置工事" class="w-full h-full object-cover object-top">
+<div class="bg-gray-100">
+<picture>
+<source srcset="../images/service-installation.webp" type="image/webp">
+<img src="../images/service-installation.jpg" alt="エアコン取り付け・設置工事の様子" class="w-full h-auto" width="800" height="207" loading="lazy">
+</picture>
 </div>
 <div class="p-6">
 <div id="installation-service" class="bg-white p-6 rounded-lg shadow-md">
@@ -572,7 +580,10 @@
 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
   <div class="relative">
     <div class="h-48 overflow-hidden">
-      <img src="../images/MSZ-KXV2225.jpg" alt="三菱 MSZ-KXV2225 エアコン" class="w-full h-full object-cover">
+      <picture>
+      <source srcset="../images/MSZ-KXV2225.webp" type="image/webp">
+      <img src="../images/MSZ-KXV2225.jpg" alt="三菱 MSZ-KXV2225 エアコン" class="w-full h-full object-cover" width="600" height="450" loading="lazy">
+      </picture>
     </div>
     <div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">特価</div>
   </div>
@@ -593,7 +604,10 @@
 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
   <div class="relative">
     <div class="h-48 overflow-hidden">
-      <img src="../images/MSZ-KXV2525.jpg" alt="三菱 MSZ-KXV2525 エアコン" class="w-full h-full object-cover">
+      <picture>
+      <source srcset="../images/MSZ-KXV2525.webp" type="image/webp">
+      <img src="../images/MSZ-KXV2525.jpg" alt="三菱 MSZ-KXV2525 エアコン" class="w-full h-full object-cover" width="600" height="292" loading="lazy">
+      </picture>
     </div>
 <div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">特価</div>
 </div>
@@ -614,7 +628,10 @@
 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
   <div class="relative">
     <div class="h-48 overflow-hidden">
-      <img src="../images/MSZ-KXV2825.jpg" alt="三菱 MSZ-KXV2825 エアコン" class="w-full h-full object-cover">
+      <picture>
+      <source srcset="../images/MSZ-KXV2825.webp" type="image/webp">
+      <img src="../images/MSZ-KXV2825.jpg" alt="三菱 MSZ-KXV2825 エアコン" class="w-full h-full object-cover" width="600" height="450" loading="lazy">
+      </picture>
     </div>
 <div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">特価</div>
 </div>
@@ -636,7 +653,10 @@
 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
   <div class="relative">
     <div class="h-48 overflow-hidden">
-      <img src="../images/MSZ-KXV4025.jpg" alt="三菱 MSZ-KXV4025 エアコン" class="w-full h-full object-cover">
+      <picture>
+      <source srcset="../images/MSZ-KXV4025.webp" type="image/webp">
+      <img src="../images/MSZ-KXV4025.jpg" alt="三菱 MSZ-KXV4025 エアコン" class="w-full h-full object-cover" width="600" height="292" loading="lazy">
+      </picture>
     </div>
 <div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">特価</div>
 </div>
@@ -771,7 +791,7 @@
 </div>
 <div>
 <p class="font-medium">高所作業</p>
-<p class="text-sm text-gray-600">2階以上の場合 4,000円～</p>
+<p class="text-sm text-gray-600">2階以上の場合 6,000円～</p>
 </div>
 </li>
 <li class="flex items-start">
@@ -939,11 +959,11 @@
                                 </tr>
                                 <tr class="border-b border-gray-200">
                                     <td class="px-4 py-3">高所作業（2F以上）</td>
-                                    <td class="px-4 py-3 font-medium">5,000円</td>
+                                    <td class="px-4 py-3 font-medium">6,000円</td>
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-3">既存エアコン取り外し</td>
-                                    <td class="px-4 py-3 font-medium">5,000円</td>
+                                    <td class="px-4 py-3 font-medium">6,000円</td>
                                 </tr>
                             </tbody>
                         </table>
