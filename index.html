@@ -21,14 +21,85 @@
 <title>北見市エアコン販売・設置取付工事 | 地域密着のエアコン専門店</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script src="js/tailwind-config.js"></script>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp">
-<link rel="preload" as="image" href="images/hero-bg.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+<style>
+/* Font fallback to reduce CLS */
+@font-face{font-family:'Noto Sans JP Fallback';src:local('Hiragino Kaku Gothic ProN'),local('メイリオ'),local('Meiryo');size-adjust:100.4%;ascent-override:118%;descent-override:27%;line-gap-override:0%}
+/* Critical CSS - above the fold */
+*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}
+html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,sans-serif}
+body{margin:0;line-height:inherit;--tw-bg-opacity:1;background-color:rgb(249 250 251/var(--tw-bg-opacity,1))}
+img,video{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:inherit}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}
+p,blockquote,dl,dd,figure,hr,pre{margin:0}
+menu,ol,ul{list-style:none;margin:0;padding:0}
+fieldset{margin:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}
+button{cursor:pointer;background:transparent}
+[hidden]{display:none}
+[class^="ri-"],[class*=" ri-"]{display:inline-block;width:1em;height:1em;vertical-align:-0.125em;line-height:1}
+.container{width:100%;margin:0 auto;padding:0 1rem}
+@media(min-width:640px){.container{max-width:640px}}
+@media(min-width:768px){.container{max-width:768px}}
+@media(min-width:1024px){.container{max-width:1024px}}
+@media(min-width:1280px){.container{max-width:1280px}}
+.sticky{position:sticky}.top-0{top:0}.z-50{z-index:50}
+.flex{display:flex}.hidden{display:none}.block{display:block}.inline-block{display:inline-block}
+.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}
+.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}.space-x-6>:not([hidden])~:not([hidden]){margin-left:1.5rem}
+.mx-auto{margin:0 auto}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding:.25rem 0}.py-2{padding:.5rem 0}.py-3{padding:.75rem 0}
+.px-3{padding-left:.75rem;padding-right:.75rem}.px-8{padding-left:2rem;padding-right:2rem}
+.py-4{padding:1rem 0}.py-16{padding:4rem 0}.p-6{padding:1.5rem}
+.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:.25rem}.mr-2{margin-right:.5rem}
+.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-10{width:2.5rem}.w-full{width:100%}
+.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-10{height:2.5rem}.h-full{height:100%}
+.max-w-md{max-width:28rem}
+.text-xs{font-size:.75rem}.text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}
+.font-bold{font-weight:700}.font-medium{font-weight:500}
+.text-white{color:#fff}.text-gray-700{color:#374151}.text-gray-800{color:#1f2937}.text-gray-900{color:#111827}
+.text-primary{color:#0066cc}.text-center{text-align:center}
+.bg-white{background:#fff}.bg-primary{background:#0066cc}.bg-red-600{background:#dc2626}.bg-gray-50{background:#f9fafb}
+.bg-\[\#06C755\]{background:#06C755}
+.rounded-full{border-radius:9999px}.rounded-lg{border-radius:16px}.rounded-button{border-radius:8px}
+.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)}
+.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+.whitespace-nowrap{white-space:nowrap}.border-t{border-top:1px solid #e5e7eb}
+.transition-colors{transition:color .15s,background-color .15s}
+.overflow-hidden{overflow:hidden}
+.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}
+.gap-4{gap:1rem}.gap-8{gap:2rem}
+.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}
+.text-red-600{color:#dc2626}
+.bg-secondary{background:#ff6600}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding:.75rem 0}
+.h-auto{height:auto}
+.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.duration-300{transition-duration:.3s}
+.grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.border-2{border-width:2px}.border-primary{border-color:#0066cc}
+.relative{position:relative}.absolute{position:absolute}.top-2{top:.5rem}.left-2{left:.5rem}
+.object-cover{object-fit:cover}
+.font-\[\'Pacifico\'\]{font-family:Pacifico}
+.mb-12{margin-bottom:3rem}.max-w-2xl{max-width:42rem}.text-gray-600{color:#4b5563}
+@media(min-width:640px){.sm\:flex-row{flex-direction:row}}
+@media(min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:flex-row{flex-direction:row}.md\:w-1\/2{width:50%}.md\:mb-0{margin-bottom:0}.md\:py-24{padding:6rem 0}.md\:text-4xl{font-size:2.25rem}.md\:inline-block{display:inline-block}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.md\:pr-8{padding-right:2rem}}
+@media(min-width:1024px){.lg\:text-5xl{font-size:3rem}}
+body{font-family:'Noto Sans JP','Noto Sans JP Fallback',sans-serif}
+.hero-section{background-position:center;background-size:cover;position:relative}
+.hero-overlay{background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.85) 50%,rgba(255,255,255,.3) 100%)}
+.floating-cta{position:fixed;bottom:20px;right:20px;z-index:100}
+</style>
+<link rel="stylesheet" href="css/icons.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/icons.css"></noscript>
+<link rel="stylesheet" href="css/tailwind.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/tailwind.css"></noscript>
+<link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+<link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high">
 <link rel="canonical" href="https://ac-kitami.com/">
 <script type="application/ld+json">
 {
@@ -138,7 +209,7 @@
 </div>
 <span>LINE相談</span>
 </a>
-<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
 <i class="ri-menu-line ri-2x text-gray-700"></i>
 </button>
 </div>
@@ -170,11 +241,12 @@
 </div>
 </div>
 </header>
+<main>
 <!-- キャンペーンバナー -->
 <div class="bg-red-600 text-white py-1">
 <div class="container mx-auto px-4">
 <div class="flex justify-center items-center text-center">
-<span class="font-bold">【3月31日まで】最大1万円割引！ 詳細はLINEで</span>
+<span class="font-bold">【4月30日まで】最大1万円クーポン発券中！ 詳細はLINEより</span>
 </div>
 </div>
 </div>
@@ -301,16 +373,12 @@
 </div>
 <div class="w-full md:w-1/2">
 <div class="rounded-lg overflow-hidden shadow-lg">
-<iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186178.65601782898!2d143.7106915!3d43.8205525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9d3e0a1a9aaaab%3A0x6b8b4b6b4b6b4b6b!2z5YyX5rW36YGT5YyX6KaL5biC!5e0!3m2!1sja!2sjp!4v1709200000000!5m2!1sja!2sjp"
-  width="100%"
-  height="400"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-  title="北見市の対応エリアマップ">
-</iframe>
+<div id="map-facade" style="width:100%;height:400px;background:#e5e7eb;display:flex;align-items:center;justify-content:center;cursor:pointer" aria-label="北見市の対応エリアマップを表示">
+  <p style="color:#6b7280;font-size:0.875rem"><i class="ri-map-pin-fill mr-2"></i>地図を読み込み中...</p>
+</div>
+<script>
+(function(){var f=document.getElementById('map-facade');var loaded=false;function loadMap(){if(loaded)return;loaded=true;var iframe=document.createElement('iframe');iframe.src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186178.65601782898!2d143.7106915!3d43.8205525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9d3e0a1a9aaaab%3A0x6b8b4b6b4b6b4b6b!2z5YyX5rW36YGT5YyX6KaL5biC!5e0!3m2!1sja!2sjp!4v1709200000000!5m2!1sja!2sjp';iframe.width='100%';iframe.height='400';iframe.style.border='0';iframe.allowFullscreen=true;iframe.referrerPolicy='no-referrer-when-downgrade';iframe.title='北見市の対応エリアマップ';f.replaceWith(iframe);}if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){loadMap();obs.disconnect();}},{rootMargin:'200px'});obs.observe(f);}else{loadMap();}})();
+</script>
 </div>
 <p class="mt-3 text-center text-sm text-gray-600">
 <i class="ri-map-pin-line mr-1"></i>北見市を中心に道東エリアに出張対応いたします
@@ -1030,24 +1098,24 @@
 <h3 class="text-xl font-bold mb-6">見積り・お問い合わせフォーム</h3>
 <form id="contact-form">
 <div class="mb-4">
-<label class="block text-gray-700 text-sm font-medium mb-2">お名前 <span class="text-red-500">*</span></label>
-<input type="text" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+<label for="contact-name" class="block text-gray-700 text-sm font-medium mb-2">お名前 <span class="text-red-500">*</span></label>
+<input type="text" name="name" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
 </div>
 <div class="mb-4">
-<label class="block text-gray-700 text-sm font-medium mb-2">電話番号 <span class="text-red-500">*</span></label>
-<input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+<label for="contact-phone" class="block text-gray-700 text-sm font-medium mb-2">電話番号 <span class="text-red-500">*</span></label>
+<input type="tel" name="phone" id="contact-phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
 </div>
 <div class="mb-4">
-<label class="block text-gray-700 text-sm font-medium mb-2">メールアドレス<span class="text-red-500">*</span></label>
-<input type="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary">
+<label for="contact-email" class="block text-gray-700 text-sm font-medium mb-2">メールアドレス<span class="text-red-500">*</span></label>
+<input type="email" name="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary">
 </div>
 <div class="mb-4">
-<label class="block text-gray-700 text-sm font-medium mb-2">ご住所</label>
-<input type="text" name="address" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="北見市○○町1-2-3">
+<label for="contact-address" class="block text-gray-700 text-sm font-medium mb-2">ご住所</label>
+<input type="text" name="address" id="contact-address" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="北見市○○町1-2-3">
 </div>
 <div class="mb-4">
-<label class="block text-gray-700 text-sm font-medium mb-2">お問い合わせ内容 <span class="text-red-500">*</span></label>
-<select name="inquiry_type" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8 appearance-none bg-white" style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\'http://www.w3.org/2000/svg\'viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\'stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat;background-position: right 10px center; background-size: 16px;" required>
+<label for="contact-inquiry" class="block text-gray-700 text-sm font-medium mb-2">お問い合わせ内容 <span class="text-red-500">*</span></label>
+<select name="inquiry_type" id="contact-inquiry" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8 appearance-none bg-white" style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\'http://www.w3.org/2000/svg\'viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\'stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat;background-position: right 10px center; background-size: 16px;" required>
 <option value="">選択してください</option>
 <option value="estimate">お見積り依頼</option>
 <option value="product">エアコン本体について</option>
@@ -1056,8 +1124,8 @@
 </select>
 </div>
 <div class="mb-6">
-<label class="block text-gray-700 text-sm font-medium mb-2">詳細内容</label>
-<textarea name="message" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary h-32" placeholder="ご質問やご要望の詳細をお書きください"></textarea>
+<label for="contact-message" class="block text-gray-700 text-sm font-medium mb-2">詳細内容</label>
+<textarea name="message" id="contact-message" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary h-32" placeholder="ご質問やご要望の詳細をお書きください"></textarea>
 </div>
 <div class="mb-6">
 <label class="custom-checkbox">
@@ -1301,6 +1369,7 @@ LINE相談
 </div>
 </div>
 </section>
+</main>
 <!-- フッター -->
 <footer class="bg-gray-800 text-white py-12">
 <div class="container mx-auto px-4">
@@ -1365,7 +1434,7 @@ LINE相談
 <div class="border-t border-gray-700 mt-8 pt-8">
 <div class="flex flex-col md:flex-row justify-between items-center">
 <div class="mb-4 md:mb-0">
-<p class="text-sm text-gray-400">&copy; 2025-2026 エアコンラボ北見店 All Rights Reserved.</p>
+<p class="text-sm text-gray-400">&copy; 2025-2026 <a href="/" class="hover:text-white">エアコンラボ北見店</a> All Rights Reserved.</p>
 </div>
 <div class="flex space-x-4">
 <a href="privacy-policy" class="text-sm text-gray-400 hover:text-white">プライバシーポリシー</a>
@@ -1392,6 +1461,6 @@ LINE相談
 </div>
 </div>
 <!-- スクリプト -->
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

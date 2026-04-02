@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.getElementById("mobile-menu");
   mobileMenuButton.addEventListener("click", function () {
     mobileMenu.classList.toggle("hidden");
+    const isOpen = !mobileMenu.classList.contains("hidden");
+    mobileMenuButton.setAttribute("aria-expanded", isOpen);
   });
   // メニュー項目クリックで閉じる
   mobileMenu.querySelectorAll("a").forEach(item => {

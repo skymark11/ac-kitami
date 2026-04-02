@@ -3,9 +3,17 @@ _local/
 
 # 一時ファイル
 *.tmp
+*.tmp.*
 .DS_Store
 Thumbs.db
 
 # バックアップファイル
 *.bak
 *.bak.*
+
+# ビルドツール（FTPアップロード不要）
+node_modules/
+package.json
+package-lock.json
+tailwind.config.js
+css/tailwind-input.css
