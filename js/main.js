@@ -67,7 +67,7 @@ async function handleFormSubmit(e) {
   try {
     const formData = new FormData(form);
     
-    const response = await fetch('send_mail.php', {
+    const response = await fetch(form.action, {
       method: 'POST',
       body: formData
     });
