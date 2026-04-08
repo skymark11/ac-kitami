@@ -4,6 +4,8 @@ _local/
 # 一時ファイル
 *.tmp
 *.tmp.*
+*~
+*.swp
 .DS_Store
 Thumbs.db
 
