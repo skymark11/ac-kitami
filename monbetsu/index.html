@@ -911,23 +911,44 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold mb-4">お支払い方法</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">お客様のご都合に合わせて、様々なお支払い方法をご用意しております。</p>
+            <p class="text-gray-600 max-w-2xl mx-auto">エアコンの購入・取り付け・コンセント増設工事など、すべてのお支払いで現金・銀行振込・クレジットカードをお選びいただけます。</p>
         </div>
-        <div class="bg-white rounded-lg p-8 shadow-lg max-w-2xl mx-auto">
-            <div class="flex justify-center gap-16 mb-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="ri-money-yen-circle-fill ri-3x text-gray-700"></i>
-                    </div>
-                    <span class="font-medium text-lg">現金</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
+            <!-- 現金 -->
+            <div class="bg-white rounded-xl p-6 shadow-md text-center" style="border-top: 3px solid #0066cc;">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #e8f4fd;">
+                    <i class="ri-money-yen-circle-fill ri-2x" style="color: #0066cc;"></i>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="ri-bank-fill ri-3x text-gray-700"></i>
-                    </div>
-                    <span class="font-medium text-lg">銀行振込</span>
-                </div>
+                <p class="font-bold text-lg mb-2">現金</p>
+                <p class="text-sm text-gray-600">現地でのお支払い</p>
             </div>
+            <!-- 銀行振込 -->
+            <div class="bg-white rounded-xl p-6 shadow-md text-center" style="border-top: 3px solid #0066cc;">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #e8f4fd;">
+                    <i class="ri-bank-fill ri-2x" style="color: #0066cc;"></i>
+                </div>
+                <p class="font-bold text-lg mb-2">銀行振込</p>
+                <p class="text-sm text-gray-600">請求書発行後のお振込</p>
+            </div>
+            <!-- クレジットカード -->
+            <div class="bg-white rounded-xl p-6 shadow-md text-center" style="border-top: 3px solid #0066cc;">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #e8f4fd;">
+                    <i class="ri-bank-card-fill ri-2x" style="color: #0066cc;"></i>
+                </div>
+                <p class="font-bold text-lg mb-2">クレジットカード</p>
+                <p class="text-sm text-gray-600">主要7ブランド対応</p>
+            </div>
+        </div>
+        <!-- カードブランド一覧 -->
+        <div class="bg-white rounded-xl p-6 shadow-md max-w-4xl mx-auto">
+            <p class="text-sm font-medium text-gray-700 text-center mb-5">
+                <i class="ri-shield-check-fill" style="color: #0066cc;"></i>
+                対応カードブランド（Square決済）
+            </p>
+            <div class="px-2 md:px-4">
+                <img src="../images/payment/payment.png" alt="対応カードブランド：Visa、Mastercard、American Express、JCB、Diners Club、Discover、UnionPay" class="w-full h-auto" loading="lazy">
+            </div>
+            <p class="text-sm text-gray-600 text-center mt-4">Visa / Mastercard / American Express / JCB / Diners Club / Discover / UnionPay（銀聯）に対応しています。</p>
         </div>
     </div>
 </section>
