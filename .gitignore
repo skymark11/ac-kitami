@@ -1,3 +1,6 @@
+# Claude Code ローカル設定
+.claude/settings.local.json
+
 # ローカル専用フォルダ（FTPアップロード不要）
 _local/
 
