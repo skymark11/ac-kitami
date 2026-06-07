@@ -1,32 +1,70 @@
 ## セッション引き継ぎ
 
-最終更新: 2026-06-07
+最終更新: 2026-06-07（休憩中）
 
-### 作業中だったこと
-- なし（リポジトリ整合性整理を完了し、次は kitami-001 着手予定）
+### セッション状態
+- **休憩中**（次のセッションでそのまま再開できる状態）
+- フェーズ1「リポジトリ整合性整理」完了
+- 次回着手予定: **kitami-001 施工事例ページ作成**
+
+---
+
+### ⚠️ FTPアップ待ち（最優先の引き継ぎ事項）
+
+**ローカル・GitHub には反映済みだが FTP に未反映の変更:**
+
+| ファイル | 変更内容 | コミット |
+|---|---|---|
+| `about/index.html` | 「防虫キャップ無料サービス」の記載削除 | 779f856 |
+
+→ 次回のFTPアップロード時に **`about/index.html` を必ずアップする**こと。
+（kitami-001 のページ作成完了後にまとめてアップする想定）
+
+---
 
 ### 今回完了したこと（2026-06-07）
-- **abashiri/works/* のFTP公開済み内容をGitに反映**（c4ab384 / 73ファイル）
-  - 施工事例ハブ + 詳細001/002 ページ
-  - 既存画像のWebP再変換による大幅軽量化（after-04: 1.9MB→78KB 等、合計数十MB削減）
-  - sitemap.xml、index.html フッター・対応エリアリンク整備
-  - DEPLOY-STATUS.md 更新
-- **`.agents/skills/`** （unified-header-footer / works-case-builder）を Git 管理に追加
-- **Dropbox同期競合コピー**（`.claude/settings.local (...競合コピー...).json`）を削除
-- **スマホ作業ブランチ5件をすべて整理**:
-  | ブランチ | 判定 |
-  |---|---|
-  | claude/ac-2027-kitami-page-YxKMG | mainに別実装で取込み済み → 削除 |
-  | claude/ac-lab-landing-page-L8yXi | 古いLP試作 → 削除 |
-  | claude/fix-construction-examples-jIzqM | 北見side works/ 試作（別案件）→ 削除 |
-  | claude/issue-content-review-7Gmgv | お客様の声セクション → 後日改めるとして削除 |
-  | claude/kitami-gbp-local-seo-ohvfJ | LocalBusiness強化 → 別タスク化して削除 |
+
+#### 1. abashiri/works/* FTP公開済み内容を Git に反映（c4ab384 / 73ファイル）
+- 施工事例ハブ + 詳細001/002 ページ
+- 既存画像のWebP再変換による大幅軽量化（after-04: 1.9MB→78KB 等、合計数十MB削減）
+- sitemap.xml、index.html フッター・対応エリアリンク整備
+- DEPLOY-STATUS.md 更新
+
+#### 2. `.agents/skills/` を Git 管理に追加
+- unified-header-footer
+- works-case-builder
+
+#### 3. Dropbox同期競合コピー削除
+- `.claude/settings.local (...競合コピー...).json`
+
+#### 4. スマホ作業ブランチ5件すべて整理（リモート削除）
+
+| ブランチ | 判定 |
+|---|---|
+| claude/ac-2027-kitami-page-YxKMG | main に別実装で取込み済み → 削除 |
+| claude/ac-lab-landing-page-L8yXi | 古いLP試作 → 削除 |
+| claude/fix-construction-examples-jIzqM | 北見side works/ 試作（別案件）→ 削除 |
+| claude/issue-content-review-7Gmgv | お客様の声セクション → 後日改めるとして削除 |
+| claude/kitami-gbp-local-seo-ohvfJ | LocalBusiness強化 → 別タスク化して削除 |
+
+#### 5. NOW.md 更新（d922798）
+
+#### 6. about: 防虫キャップ無料サービスの記載削除（779f856・FTPアップ未済）
+
+#### 7. `.tmp` 系一時ファイル 16件 削除（0.28MB）
+- index.html.tmp, sitemap.xml.tmp, settings.local.json.tmp など
+- Dropbox同期残骸の掃除
+
+---
 
 ### 決定事項
-- **整合性**: ローカル = GitHub main = FTP公開状態 が揃った
+- **整合性**: ローカル = GitHub main = （abashiri/works/* についてはFTP）が揃った
+- **about/index.html の防虫キャップ削除は FTP 未反映**（次回アップ時に忘れず反映）
 - **kitami-001 計画は有効**: 画像WebP変換（Step 1）は完了済み（`images/works/kitami/001/` に15枚配置済み）
 - **お客様の声セクション再実装**は別タスク
 - **構造化データ強化スプリント**は別タスク
+
+---
 
 ### 次にやるべきこと（優先順位）
 
@@ -60,7 +98,7 @@
 - 効果: GBP（Googleビジネスプロフィール）連携・ローカルSEO向上
 
 #### 4. その他保留中
-- **ローカルブランチ `feature/200v-column`** の処置（中身要確認）
+- **ローカルブランチ `feature/200v-column`** の処置（中身要確認・リモートには無し）
 - `/monbetsu/` 内容確定後のFTP公開
 - `/bihoro/` 内容確定後のFTP公開
 - `/abashiri/works/003/` 駒場入れ替え事例の生成（works-case-builder スキル使用予定）
@@ -95,3 +133,14 @@
 - **002/003 の画像**: 分類未完了のため、`htdocs/ac-kitami/images/works/kitami/002/, 003/` の IMG_*.jpg から代表1枚を選定して使う
 - **index.html の施工事例セクション**: 現在位置は行719-778
 - **info-template.txt**: `assets/photos/_inbox/エアコン写真素材/北見市/kitami-001_中央三輪_梅津様/info-template.txt` に施工ポイントの詳細テキストあり（ストーリー化の元ネタ）
+
+---
+
+### 新セッション開始時の確認チェックリスト
+新しいClaude会話を始めるときに、このNOW.mdを読んだ上で以下を確認:
+
+- [ ] 現在のブランチが `main` であることを確認（`git branch`）
+- [ ] ローカル変更がないことを確認（`git status` → clean想定）
+- [ ] GitHub main の最新状態と一致していることを確認（`git pull` または `git fetch`）
+- [ ] **FTPアップ待ち項目**（上記表）が残っていれば、次のFTPアップで反映する
+- [ ] kitami-001 に着手する場合は、プランファイル `C:\Users\shishido\.claude\plans\twinkling-snuggling-ocean.md` を必ず先に読む
