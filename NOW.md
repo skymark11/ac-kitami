@@ -1,10 +1,26 @@
 ## セッション引き継ぎ
 
-最終更新: 2026-06-16
+最終更新: 2026-06-16 セッション終了時
 
-### 2026-06-15〜16 kitami-001 施工事例ページ完成 + 写真分類パイプライン実証
+### 2026-06-15〜16 kitami-001 施工事例ページ完成 + 写真分類パイプライン実証 + SEO最適化
 
-ブランチ: `feature/kitami-001-case-page`（main から切り、コミット予定）
+ブランチ: 全て main にマージ済み・origin に push 済み
+
+#### 追加コミット（SEO最適化10項目・スコア 77→約93点）
+
+コミット `0734b50` → マージ `13d99b5`
+
+- meta description / og:description / Article JSON-LD から削除済み「209,220円」を全て除去
+- 主要キーワード「エアコン取付」を本文・要約・FAQ・CTAに5回挿入（従来0回）
+- LocalBusiness + HVACBusiness JSON-LD 新規追加（areaServed 8市町村）
+- FAQPage JSON-LD 新規追加（5問）+ 本文FAQセクション（`<details>` 形式）
+- アンサーファースト要約段落をH1直下に追加（AI Overviews引用率向上目的）
+- Article JSON-LD に publisher / dateModified / author.url 追加、datePublished をアンケート用紙日付 2025-07-23 に正確化
+- Twitter Card メタタグ4種追加
+- photoswipe.css を `media="print" + onload` で非同期化
+- 関連事例をリンク1本 → 画像付きカード2件（abashiri 001/002）に拡充
+- CTA: 「エアコン取付・工事」+「中央三輪・端野・常呂・留辺蘂・相内・東相内」周辺地名追加
+- 本文文字数 2,988 → 3,926字
 
 #### 今回の主な成果
 
