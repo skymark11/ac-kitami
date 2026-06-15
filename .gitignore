@@ -22,3 +22,7 @@ package.json
 package-lock.json
 tailwind.config.js
 css/tailwind-input.css
+
+# 写真分類パイプラインの中間生成物（classification.json + organize.py から再生成可能）
+# byカテゴリの振り分けコピーは容量大で確認後は不要
+images/works/*/*/_classification/by_category/

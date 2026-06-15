@@ -1,6 +1,57 @@
 ## セッション引き継ぎ
 
-最終更新: 2026-06-15（秘書ハブからの新規引き継ぎ）
+最終更新: 2026-06-16
+
+### 2026-06-15〜16 kitami-001 施工事例ページ完成 + 写真分類パイプライン実証
+
+ブランチ: `feature/kitami-001-case-page`（main から切り、コミット予定）
+
+#### 今回の主な成果
+
+1. **kitami-001 施工事例ページ完成** (`kitami/works/001/index.html`)
+   - 北見市中央三輪・三菱霧ヶ峰GV2825・専用回路増設・屋根付き架台
+   - 全15画像配置（ヒーロー・施工工程・完成写真・アンケート）
+   - PhotoSwipe v5 による画像クリック拡大表示（PC=ホイールズーム / スマホ=ピンチズーム）
+   - お客様アンケートを手書き原文ママでテキスト化
+   - 担当者コメントは施工主ヒアリング内容を屋号で書き起こし（個人名なし）
+   - 施工概要テーブルから費用/工期/担当者を恒久除外
+   - sitemap.xml に `/kitami/works/001/` 追加
+   - トップページ index.html の001カードに「詳細を見る」リンク追加 + サムネを hero-after.webp に更新
+
+2. **写真分類パイプライン実証** （`images/works/kitami/001/_classification/`）
+   - 36枚の IMG_*.jpg をサブエージェントで視覚分類 → JSON出力
+   - カテゴリ別フォルダ振り分け（_classification/by_category/）
+   - 個人情報含む書類5枚（見積書/請求書）を確実に除外
+   - 選定14枚をセマンティック名で WebP+JPG 化（hero-before, ba-after, process-1-floor, done-1-indoor-unit など）
+   - **エージェント誤分類3枚を Claude 自身の Read 再確認で検知・修正**
+
+3. **新規スキル `photo-classification-pipeline` 作成**（`.agents/skills/photo-classification-pipeline/`）
+   - SKILL.md + プロンプトテンプレート + organize.py + generate-page-images.py
+   - 「Claude自身による再確認フェーズ」を必須プロセスとして組み込み（誤分類対策）
+
+4. **ワークフロールール4件をメモリに保存**（C:\Users\shishido\.claude\projects\...\memory\）
+   - feedback-case-study-author-voice（担当者コメントはヒアリング必須・個人名NG・因果順序を保持）
+   - feedback-case-summary-table-columns（費用/工期/担当者をテーブルから恒久除外）
+   - feedback-survey-verbatim-transcription（アンケートは原文ママ転記）
+   - feedback-photo-classification-verification（分類エージェント出力は誤分類前提・Claude自身が再確認）
+
+#### feature/photo-pipeline-foundation ブランチの扱い
+
+睡眠中Claude（2026-06-11）が作った `feature/photo-pipeline-foundation` ブランチは、今回別アプローチで実証済みのため不要。
+新スキル `photo-classification-pipeline` がそれを置き換えるので、`feature/photo-pipeline-foundation` ブランチは **削除推奨**。
+
+```bash
+git -C "e:/Dropbox/apps/remotely-save/htdocs/ac-kitami" branch -D feature/photo-pipeline-foundation
+```
+
+#### 次にやること
+
+1. **FTPアップロード待ち**（下記「FTPアップ待ち」セクション参照・項目大幅増）
+2. feature/kitami-001-case-page を main にマージするか PR を作るかユーザー判断
+3. パイプラインを kitami-002, abashiri-003 等の他案件に適用してみる
+4. 別タスク: FVデザイン整え（下記 2026-06-15 秘書ハブ引き継ぎ参照）
+
+---
 
 ### 2026-06-15 秘書ハブからの引き継ぎ（FVデザイン整え + SEO死守）
 
@@ -110,12 +161,24 @@ ac-kitami.com は「北見市エアコン取付」等の重要キーワードで
 
 **ローカル・GitHub には反映済みだが FTP に未反映の変更:**
 
-| ファイル | 変更内容 | コミット |
+| ファイル/フォルダ | 変更内容 | 由来 |
 |---|---|---|
-| `about/index.html` | 「防虫キャップ無料サービス」の記載削除 | 779f856 |
+| `about/index.html` | 「防虫キャップ無料サービス」の記載削除 | コミット 779f856 |
+| `index.html` | 施工事例セクション001カードに詳細リンク追加 + サムネ画像更新（hero-after.webp/jpg） | feature/kitami-001-case-page |
+| `sitemap.xml` | `/kitami/works/001/` 追加 | feature/kitami-001-case-page |
+| `kitami/works/001/` フォルダ一式 | 新規施工事例ページ index.html | feature/kitami-001-case-page |
+| `images/works/kitami/001/` | 旧ファイル28枚削除（before-01〜02, after-01〜08, process-01〜04）+ 新ファイル28枚追加（hero/ba/process-N/done-N の.webp/.jpg）| feature/kitami-001-case-page |
+| `js/photoswipe/` フォルダ一式 | PhotoSwipe v5 三点セット（photoswipe.css / .esm.min.js / -lightbox.esm.min.js）| feature/kitami-001-case-page |
 
-→ 次回のFTPアップロード時に **`about/index.html` を必ずアップする**こと。
-（kitami-001 のページ作成完了後にまとめてアップする想定）
+→ 次回FTPアップロード時に **上記すべてを反映する**こと。
+特に `kitami/works/001/` と `js/photoswipe/` は新フォルダなので、フォルダごとアップロード忘れに注意。
+`images/works/kitami/001/` 内の旧ファイル（before-01.* など）はFTP側からも削除推奨。
+
+**FTPにアップしないフォルダ（公開不要）:**
+- `images/works/kitami/001/_classification/`（分類用JSONとスクリプト）
+- `images/works/kitami/001/IMG_*.jpg`（元写真36枚・容量大）
+- `.agents/skills/photo-classification-pipeline/`（スキル定義）
+- `.claude/`, `.git/`, `.github/`, `NOW.md`, `CLAUDE.md`, `PIPELINE-PLAN.md` 等
 
 ---
 

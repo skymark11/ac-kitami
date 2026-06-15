@@ -1,0 +1,17 @@
+{
+    "_comment": "Phase 4で確定した『IMG_*.jpg → ページ用セマンティック名』のマッピング。process-2 と done-2 はClaude自身による再確認で誤分類を修正済み。generate-page-images.py がこのファイルを参照する。",
+    "IMG_9124.jpg": "hero-before",
+    "IMG_9128.jpg": "hero-after",
+    "IMG_9089.jpg": "ba-before",
+    "IMG_9166.jpg": "ba-after",
+    "IMG_9113.jpg": "process-1-floor",
+    "IMG_9133.jpg": "process-2-panel",
+    "IMG_9121.jpg": "process-3-wall",
+    "IMG_9127.jpg": "process-4-pipe",
+    "IMG_9129.jpg": "done-1-indoor-unit",
+    "IMG_9119.jpg": "done-2-panel-circuit",
+    "IMG_9169.jpg": "done-3-outlet",
+    "IMG_9168.jpg": "done-4-cover",
+    "IMG_9399.jpg": "done-5-outdoor-unit",
+    "IMG_9401.jpg": "done-6-roof-bracket"
+}
