@@ -2,6 +2,29 @@
 
 最終更新: 2026-06-22
 
+### 2026-06-22 (4) works/004 を works/003 にリネーム（番号詰め）
+
+#### 経緯
+- 旧 works/003 案件は After 写真が無く公開不可と判断 → やらない
+- 旧 works/004（北見市春光町 市営団地）を 003 として位置付けて公開する方針
+
+#### 実施内容
+1. `images/works/kitami/003/` の旧コンテンツ（IMG_*.jpg 33枚 + thumbnail）を `git rm -r` で削除
+2. `images/works/kitami/004/` を `images/works/kitami/003/` にリネーム
+3. `works/004/` を `works/003/` にリネーム
+4. `works/003/index.html` 内の URL/パスを 004 → 003 に置換（39箇所、PowerShellで一括）
+5. トップ index.html の事例3 画像パス + 詳細リンク `works/003/` 追加
+6. works/002/index.html の関連事例リンク `../004/` → `../003/`
+7. /works/ ハブに 003 カード追加（CollectionPage 構造化データも 001/002/003 に更新）
+8. sitemap.xml に `/works/003/` 追加
+9. DEPLOY-STATUS.md を全体最新化
+
+#### 注意事項
+- **works/003/ は v1 仕様のまま**（2026-03-16作成のオリジナル中身）
+- PhotoSwipe 未実装、画像 semantic 命名化されていない、SEO 監査未実施
+- 公開は可能（旧仕様だが完成形）
+- **v2 仕様化（PhotoSwipe・semantic命名・SEO最適化）は別タスク**として未着手
+
 ### 2026-06-22 (3) kitami/works/001/ → /works/001/ 統合完了
 
 #### 実施内容
