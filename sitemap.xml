@@ -37,13 +37,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ac-kitami.com/kitami/works/001/</loc>
-    <lastmod>2026-06-16</lastmod>
+    <loc>https://ac-kitami.com/works/</loc>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ac-kitami.com/works/</loc>
+    <loc>https://ac-kitami.com/works/001/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -5,3 +5,7 @@ RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.ac-kitami\.com [NC]
 RewriteRule ^(.*)$ https://ac-kitami.com/$1 [L,R=301]
+
+# 旧URL → 新URL 301リダイレクト（インデックス引き継ぎ）
+# 2026-06-22: /kitami/works/001/ を /works/001/ に統合
+Redirect 301 /kitami/works/001/ https://ac-kitami.com/works/001/
