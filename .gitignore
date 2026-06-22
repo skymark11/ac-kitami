@@ -26,3 +26,6 @@ css/tailwind-input.css
 # 写真分類パイプラインの中間生成物（classification.json + organize.py から再生成可能）
 # byカテゴリの振り分けコピーは容量大で確認後は不要
 images/works/*/*/_classification/by_category/
+
+# 写真素材の生データ（Dropbox 同期で別途管理、Git 対象外）
+assets/photos/_inbox/
