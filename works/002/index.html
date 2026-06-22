@@ -26,6 +26,15 @@
 <link rel="stylesheet" href="../../css/icons.css">
 <link rel="stylesheet" href="../../css/tailwind.css">
 <link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="../../js/photoswipe/photoswipe.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="../../js/photoswipe/photoswipe.css"></noscript>
+<style>
+.pswp-gallery a { display: block; cursor: zoom-in; position: relative; }
+.pswp-gallery a:hover img { opacity: 0.92; transition: opacity 0.2s ease; }
+.pswp-gallery a::after { content: '\f3eb'; font-family: 'remixicon'; position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.55); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; opacity: 0; transition: opacity 0.2s ease; pointer-events: none; }
+.pswp-gallery a:hover::after, .pswp-gallery a:focus::after { opacity: 1; }
+@media (hover: none) { .pswp-gallery a::after { opacity: 0.8; } }
+</style>
 <link rel="canonical" href="https://ac-kitami.com/works/002/">
 
 <!-- OGP -->
@@ -187,19 +196,23 @@
 </header>
 
 <!-- ファーストビュー ビフォーアフター -->
-<div class="grid grid-cols-2 gap-3 mb-8 items-center">
+<div class="grid grid-cols-2 gap-3 mb-8 items-center pswp-gallery">
 <figure class="relative">
+<a href="../../images/works/kitami/002/ba-before-outdoor.webp" data-pswp-width="715" data-pswp-height="953" aria-label="施工前の外壁（FFストーブ排気筒）を拡大表示">
 <picture>
     <source srcset="../../images/works/kitami/002/ba-before-outdoor.webp" type="image/webp">
     <img src="../../images/works/kitami/002/ba-before-outdoor.jpg" alt="施工前：FFストーブ排気筒があり配管経路の検討が必要な外壁（北見市相ノ内）" class="w-full rounded-lg aspect-[3/4] object-cover" width="715" height="953" fetchpriority="high">
 </picture>
+</a>
 <span class="absolute top-2 left-2 bg-gray-800/80 text-white text-xs px-2 py-1 rounded">Before</span>
 </figure>
 <figure class="relative">
+<a href="../../images/works/kitami/002/hero-after.webp" data-pswp-width="715" data-pswp-height="953" aria-label="施工後のL字配管と三菱室外機を拡大表示">
 <picture>
     <source srcset="../../images/works/kitami/002/hero-after.webp" type="image/webp">
     <img src="../../images/works/kitami/002/hero-after.jpg" alt="施工後：FFストーブ排気筒を避けたL字配管と三菱室外機の設置完了" class="w-full rounded-lg aspect-[3/4] object-cover" width="715" height="953" fetchpriority="high">
 </picture>
+</a>
 <span class="absolute top-2 left-2 bg-primary/80 text-white text-xs px-2 py-1 rounded">After</span>
 </figure>
 </div>
@@ -323,55 +336,67 @@
 <h3 class="font-bold text-lg mb-4 text-center">ビフォー・アフター</h3>
 
 <p class="text-sm text-gray-500 mb-2 text-center">室外機</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 pswp-gallery">
 <figure>
+<a href="../../images/works/kitami/002/ba-before-outdoor.webp" data-pswp-width="715" data-pswp-height="953" aria-label="施工前の外壁（FFストーブ排気筒）を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/ba-before-outdoor.webp" type="image/webp">
     <img src="../../images/works/kitami/002/ba-before-outdoor.jpg" alt="北見市相ノ内 室外機設置前の外壁（上部にFFストーブ排気筒）" class="w-full rounded-lg aspect-[3/4] object-cover" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工前：FFストーブ排気筒があり配管経路の検討が必要</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/hero-after.webp" data-pswp-width="715" data-pswp-height="953" aria-label="L字配管と三菱室外機の完成写真を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/hero-after.webp" type="image/webp">
     <img src="../../images/works/kitami/002/hero-after.jpg" alt="北見市相ノ内 三菱室外機とL字化粧カバー設置完了" class="w-full rounded-lg aspect-[3/4] object-cover" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工後：L字配管で排気筒を回避し室外機設置完了</figcaption>
 </figure>
 </div>
 
 <p class="text-sm text-gray-500 mb-2 text-center">室内機</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 pswp-gallery">
 <figure>
+<a href="../../images/works/kitami/002/hero-before.webp" data-pswp-width="715" data-pswp-height="953" aria-label="施工前の和室全景を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/hero-before.webp" type="image/webp">
     <img src="../../images/works/kitami/002/hero-before.jpg" alt="北見市相ノ内 施工前の和室全景" class="w-full rounded-lg aspect-[3/4] object-cover" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工前：エアコン未設置の和室</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/done-1-indoor-unit.webp" data-pswp-width="800" data-pswp-height="599" aria-label="三菱霧ヶ峰 MSZ-GV3625W 室内機完成を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-1-indoor-unit.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-1-indoor-unit.jpg" alt="北見市相ノ内 三菱霧ヶ峰 MSZ-GV3625W 室内機設置完了" class="w-full rounded-lg aspect-[4/3] object-cover" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工後：三菱 霧ヶ峰 MSZ-GV3625W 設置完了</figcaption>
 </figure>
 </div>
 
 <p class="text-sm text-gray-500 mb-2 text-center">分電盤（1996年製・約30年使用 → 新しいPanasonic製へ交換）</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pswp-gallery">
 <figure>
+<a href="../../images/works/kitami/002/ba-before-panel.webp" data-pswp-width="800" data-pswp-height="599" aria-label="1996年製の古い分電盤を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/ba-before-panel.webp" type="image/webp">
     <img src="../../images/works/kitami/002/ba-before-panel.jpg" alt="北見市相ノ内 1996年製・漏電ブレーカーのない古い分電盤" class="w-full rounded-lg aspect-[4/3] object-cover" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工前：漏電ブレーカーのない約30年もの分電盤</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/ba-after-panel.webp" data-pswp-width="800" data-pswp-height="599" aria-label="新しいPanasonic製漏電ブレーカー付き分電盤を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/ba-after-panel.webp" type="image/webp">
     <img src="../../images/works/kitami/002/ba-after-panel.jpg" alt="北見市相ノ内 Panasonic製漏電ブレーカー付き分電盤に交換" class="w-full rounded-lg aspect-[4/3] object-cover" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工後：Panasonic製 漏電ブレーカー付き分電盤</figcaption>
 </figure>
 </div>
@@ -379,26 +404,32 @@
 
 <!-- 化粧モール配線 -->
 <div class="mb-8"><h3 class="font-bold text-lg mb-4 text-center">化粧モールによる専用回路配線</h3>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pswp-gallery">
 <figure>
+<a href="../../images/works/kitami/002/done-4-mole-ceiling.webp" data-pswp-width="800" data-pswp-height="599" aria-label="天井沿いの化粧モールを拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-4-mole-ceiling.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-4-mole-ceiling.jpg" alt="北見市相ノ内 天井沿いに敷設した化粧モール" class="w-full h-40 object-cover rounded-lg" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">天井沿いの化粧モール</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/done-5-mole-corner.webp" data-pswp-width="715" data-pswp-height="953" aria-label="L字エルボでの方向転換を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-5-mole-corner.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-5-mole-corner.jpg" alt="北見市相ノ内 化粧モールのL字エルボ仕上げ" class="w-full h-40 object-cover rounded-lg" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">L字エルボでの方向転換</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/done-6-mole-down.webp" data-pswp-width="800" data-pswp-height="599" aria-label="コンセントへの引き下ろしを拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-6-mole-down.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-6-mole-down.jpg" alt="北見市相ノ内 化粧モールからコンセントへの引き下ろし" class="w-full h-40 object-cover rounded-lg" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">コンセントへの引き下ろし</figcaption>
 </figure>
 </div>
@@ -409,56 +440,72 @@
 <h3 class="font-bold text-lg mb-4 text-center">完成写真</h3>
 
 <!-- 施工直後の和室全景（臨場感のある1枚） -->
-<figure class="mb-6">
+<div class="mb-6 pswp-gallery">
+<figure>
+<a href="../../images/works/kitami/002/after-1-room.webp" data-pswp-width="715" data-pswp-height="953" aria-label="施工直後の和室全景を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/after-1-room.webp" type="image/webp">
     <img src="../../images/works/kitami/002/after-1-room.jpg" alt="北見市相ノ内 施工直後の和室全景（三菱霧ヶ峰設置完了）" class="w-full rounded-lg aspect-[3/4] md:aspect-[16/9] object-cover" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-sm text-gray-600 mt-2 text-center">施工直後の和室全景</figcaption>
 </figure>
+</div>
 
 <!-- 各部の完成写真（6枚グリッド） -->
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 pswp-gallery">
 <figure>
+<a href="../../images/works/kitami/002/done-1-indoor-unit.webp" data-pswp-width="800" data-pswp-height="599" aria-label="三菱霧ヶ峰 MSZ-GV3625W 室内機完成を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-1-indoor-unit.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-1-indoor-unit.jpg" alt="三菱霧ヶ峰 MSZ-GV3625W 室内機完成" class="w-full h-40 object-cover rounded-lg" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">室内機（三菱 霧ヶ峰）</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/hero-after.webp" data-pswp-width="715" data-pswp-height="953" aria-label="室外機とL字化粧カバー完成を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/hero-after.webp" type="image/webp">
     <img src="../../images/works/kitami/002/hero-after.jpg" alt="北見市相ノ内 室外機とL字化粧カバー完成" class="w-full h-40 object-cover rounded-lg" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">室外機 + L字化粧カバー</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/ba-after-panel.webp" data-pswp-width="800" data-pswp-height="599" aria-label="新しい分電盤を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/ba-after-panel.webp" type="image/webp">
     <img src="../../images/works/kitami/002/ba-after-panel.jpg" alt="Panasonic製 漏電ブレーカー付き分電盤" class="w-full h-40 object-cover rounded-lg" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">新しい分電盤（専用回路追加）</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/done-2-old-breaker.webp" data-pswp-width="715" data-pswp-height="953" aria-label="1996年製の旧ブレーカー本体を拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-2-old-breaker.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-2-old-breaker.jpg" alt="1996年8月製・約30年使用した旧ブレーカー本体" class="w-full h-40 object-cover rounded-lg" width="715" height="953" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">1996年製の旧ブレーカー本体</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/done-3-outlet.webp" data-pswp-width="800" data-pswp-height="599" aria-label="新設エアコン専用コンセントを拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-3-outlet.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-3-outlet.jpg" alt="新設したエアコン専用コンセント" class="w-full h-40 object-cover rounded-lg" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">新設エアコン専用コンセント</figcaption>
 </figure>
 <figure>
+<a href="../../images/works/kitami/002/done-4-mole-ceiling.webp" data-pswp-width="800" data-pswp-height="599" aria-label="化粧モール全体の仕上がりを拡大">
 <picture>
     <source srcset="../../images/works/kitami/002/done-4-mole-ceiling.webp" type="image/webp">
     <img src="../../images/works/kitami/002/done-4-mole-ceiling.jpg" alt="天井沿いに敷設した化粧モールの仕上がり" class="w-full h-40 object-cover rounded-lg" width="800" height="599" loading="lazy">
 </picture>
+</a>
 <figcaption class="text-xs text-gray-600 mt-1 text-center">化粧モール全体の仕上がり</figcaption>
 </figure>
 </div>
@@ -471,11 +518,13 @@
 <i class="ri-survey-line text-primary mr-2"></i>お客様の声
 </h2>
 <div class="flex flex-col md:flex-row gap-6 items-start">
-<div class="w-full md:w-1/2">
+<div class="w-full md:w-1/2 pswp-gallery">
+<a href="../../images/works/kitami/002/kitami-ainonai-aircon-review-001.webp" data-pswp-width="800" data-pswp-height="1066" aria-label="アンケート用紙の原本を拡大表示">
 <picture>
     <source srcset="../../images/works/kitami/002/kitami-ainonai-aircon-review-001.webp" type="image/webp">
     <img src="../../images/works/kitami/002/kitami-ainonai-aircon-review-001.jpg" alt="北見市相ノ内のお客様アンケート（手書き）" class="w-full rounded-lg border border-gray-200" width="800" height="1066" loading="lazy">
 </picture>
+</a>
 <p class="text-xs text-gray-500 mt-2 text-center">お客様にご記入いただいたアンケート</p>
 </div>
 <div class="w-full md:w-1/2">
@@ -705,5 +754,28 @@
 </div>
 
 <script src="../../js/main.js"></script>
+
+<!-- PhotoSwipe (画像クリックで拡大表示・ピンチ/ホイールズーム対応) -->
+<script type="module">
+import PhotoSwipeLightbox from '../../js/photoswipe/photoswipe-lightbox.esm.min.js';
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '.pswp-gallery',
+  children: 'a',
+  pswpModule: () => import('../../js/photoswipe/photoswipe.esm.min.js'),
+  bgOpacity: 0.92,
+  showHideAnimationType: 'fade',
+  zoom: true,
+  wheelToZoom: true,
+  initialZoomLevel: 'fit',
+  secondaryZoomLevel: 'fill',
+  maxZoomLevel: 4,
+  closeTitle: '閉じる (Esc)',
+  zoomTitle: 'ズーム (z)',
+  arrowPrevTitle: '前の写真',
+  arrowNextTitle: '次の写真',
+  errorMsg: '画像を読み込めませんでした',
+});
+lightbox.init();
+</script>
 </body>
 </html>

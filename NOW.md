@@ -1,6 +1,77 @@
 ## セッション引き継ぎ
 
-最終更新: 2026-06-16 セッション終了時
+最終更新: 2026-06-22
+
+### 2026-06-22 works/002 公開準備完了
+
+#### 今回の作業範囲（最小公開準備）
+
+ユーザー判断: **B案（旧系統 `/works/` に統一）**、今回は **works/002/ のみ公開**。
+
+#### 完了タスク
+
+1. **方針確認**: 二系統 `/works/00X/`（旧・2026-03-16）と `/kitami/works/001/`（新・2026-06-15）が併存していたが、`/works/` に統一する方針を確定
+2. **`works/002/index.html`** に **PhotoSwipe v5 を実装**
+   - kitami/works/001/ と同じ仕様（PC=ホイールズーム / スマホ=ピンチズーム）
+   - 8つのギャラリーに分割（FV B/A・室外機 B/A・室内機 B/A・分電盤 B/A・化粧モール・完成写真全景・完成写真グリッド・アンケート）
+3. **トップ index.html** の事例2修正
+   - サムネ画像パス: `after-04.webp`（v2 刷新で削除済み・リンク切れ）→ `done-1-indoor-unit.webp` に変更
+   - 「詳細を見る」リンク追加（→ `works/002/`）
+4. **sitemap.xml** に `https://ac-kitami.com/works/002/` 追加（lastmod 2026-06-22）
+5. **DEPLOY-STATUS.md** 更新
+   - `/kitami/works/001/`（2026-06-16公開）を「FTP公開済み」に記録（漏れていた）
+   - `/works/002/` を「公開準備中（今回FTPアップ予定）」に
+   - `/works/001/` `/works/004/` を「未公開・別途対応」に
+
+#### FTPアップ待ち（今回まとめて反映）
+
+| 種別 | パス | 備考 |
+|---|---|---|
+| 新規 | `/works/002/` フォルダ一式 | v2 仕様・SEO 99/100・PhotoSwipe 実装済み |
+| 新規 | `/js/photoswipe/` フォルダ一式 | photoswipe.css / photoswipe.esm.min.js / photoswipe-lightbox.esm.min.js（既にローカルにある。FTPには未アップの可能性高い） |
+| 新規 | `/images/works/kitami/002/` の semantic 命名ファイル一式 | hero-*, ba-*, done-*, after-1-room, アンケート画像（19枚相当） |
+| 更新 | `/index.html` | 事例2 サムネ + リンク修正 |
+| 更新 | `/sitemap.xml` | `/works/002/` 追加 |
+| 残: 前回未反映 | `/about/index.html` | 779f856 防虫キャップ削除（前回FTP漏れ） |
+| 残: 前回未反映 | `/kitami/works/001/` 関連一式 | 既に FTP 公開済み・最新の SEO 最適化 10項目反映分が未反映の可能性。要確認 |
+| 残: 前回未反映 | `/js/photoswipe/` | kitami-001 公開時に上げたかも。要確認 |
+
+**FTPにアップしないフォルダ**（既存ルール踏襲）:
+- `/works/002/seo-audit/`（監査レポート・公開不要）
+- `/images/works/kitami/002/_classification/`（分類用JSON・元素材30枚）
+- `.agents/`, `.claude/`, `.git/`, `.github/`, `NOW.md`, `CLAUDE.md`, `DEPLOY-STATUS.md` 等
+
+#### 公開前にユーザー対応が必要な事項
+
+1. **ベースライン記録**（順位モニタリング用・FTPアップ前に必須）
+   - Search Console で「北見市エアコン取付」「北見市エアコン」「北見市 エアコン 工事」等の主要KW直近30日順位・CTR・表示回数をスクショ
+   - 既存 `/kitami/works/001/` の表示回数・クエリも控える
+   - PageSpeed Insights でトップページ・`/kitami/works/001/`・`/works/002/`（公開後）の LCP/INP/CLS を記録
+   - 保存先: `seo-audit/baseline-2026-06-22.md`
+2. **FTPアップロード手順**
+   - 上記「FTPアップ待ち」の項目を反映
+   - 特に `/js/photoswipe/` と `/images/works/kitami/002/` の新ファイル群を**フォルダごとアップ**忘れに注意
+3. **アップ後の即時確認**
+   - https://ac-kitami.com/works/002/ が 200 で表示
+   - PhotoSwipe が動作（画像クリック→拡大）
+   - https://ac-kitami.com/ の事例2 サムネ＆「詳細を見る」リンク
+   - https://ac-kitami.com/sitemap.xml に `/works/002/` 含まれる
+4. **Search Console**
+   - sitemap.xml 再送信
+   - `/works/002/` を URL 検査 → インデックス登録リクエスト
+
+### 将来タスク: kitami/works/001/ → works/001/ 統合（今回はやらない）
+
+B案統一に従い、いずれ `/kitami/works/001/` を `/works/001/` に移植・統合する必要あり。
+
+**移行時の必須手順**:
+1. `/works/001/index.html` を kitami/works/001/ の内容（SEO 93点版）で置き換え
+2. `.htaccess` に `Redirect 301 /kitami/works/001/ https://ac-kitami.com/works/001/` を追加（インデックス引き継ぎ）
+3. sitemap.xml の URL 入れ替え
+4. トップページ index.html の事例1 リンク `kitami/works/001/` → `works/001/`
+5. Search Console で新URL 再申請、旧URL は削除しない（301で自動置換）
+
+**インデックス影響**: `/kitami/works/001/` は既に Google にインデックスされている可能性大（公開 + sitemap 登録 + 1週間経過）。301 リダイレクトで対処可能。
 
 ### 2026-06-15〜16 kitami-001 施工事例ページ完成 + 写真分類パイプライン実証 + SEO最適化
 
