@@ -1,6 +1,98 @@
 ## セッション引き継ぎ
 
-最終更新: 2026-06-22
+最終更新: 2026-06-24（ac-kitami 担当エンジニアによる SEO 監査完了・[要入力] ヒアリング待ち）
+
+### 2026-06-24 ac-kitami 担当エンジニアによる SEO 監査完了
+
+- 監査レポート: `works/004/seo-audit/kunneppu-001-seo-audit-2026-06-24.md` 作成 → commit & push 済み
+- **総合スコア: 99/100**（works/002, 003 と同水準・合格水準）
+- ac-kitami SEO 死守ルール影響: **無し**（訓子府町ページ追加で北見市キーワードと競合せず、内部リンクで `/works/001/002/003/` に権威性供給）
+- 関連事例 001/002/003 のサムネ画像（kitami/001/hero-after.webp, kitami/002/done-1-indoor-unit.webp, kitami/003/after-03.webp）すべて存在を確認、リンク切れ無し
+- PhotoSwipe・構造化データ 3 種・alt 属性・width/height・WebP・preconnect 全て works/002, 003 と同水準
+
+#### クリティカル指摘 1 件（公開前に必ず実値で埋める）
+
+`works/004/index.html` 施工概要テーブルの以下 2 セル:
+
+- L242: `<th>施工日</th><td>[要入力]</td>`
+- L266: `<th>工期</th><td>[要入力]</td>`
+
+**Joe へのヒアリングが必要**。確認内容:
+
+1. 施工日（おおよそで OK）— ミツモア経由でいつ依頼を受け、いつ施工したか。例: 「2025年9月」「2026年5月」など
+2. 工期 — 軒天裏木下地造作と隠蔽配線で時間がかかったはず。例: 「1.5日（約10-12時間）」「2日」など
+
+ヒアリング結果を反映後、即 commit & push 可能。
+
+#### FTP アップは PC 帰宅後にユーザー手動
+
+DEPLOY-STATUS.md 「公開準備中」セクションの全件（works/004 含む 8 件）をまとめて反映する想定。FTP 手順詳細は DEPLOY-STATUS.md 参照。
+
+---
+
+### 2026-06-24 秘書ハブからの引き継ぎ — works/004 SEO 監査依頼（チーフエンジニアから移譲）
+
+**ユーザー想定の起動発言:**
+「秘書から聞いていると思うけれど、works/004 の kunneppu-001 SEO 監査を進めて」
+
+#### 経緯
+
+- 2026-06-23 にチーフエンジニア（`_engineer`）が `/case-study kunneppu-001` を実行し、works/004（訓子府町 小林様 軒天天吊り施工事例）を作成。commit `ba2f99e` push 済み
+- 組織モデル v1（2026-06-24 確定）に従い、ac-kitami の SEO 死守ルール暗黙知が必要な最終チェックは ac-kitami 担当エンジニアに移譲する方針
+- ユーザー（Joe）から秘書ハブ経由で「ac-kitami 担当に SEO 監査を依頼してほしい」と指示あり（2026-06-24 車内）
+
+#### 現状の成果物（チーフエンジニア作 commit `ba2f99e` ベース）
+
+- HTML 683行（works/002 767行 / 003 686行と同等水準）
+- PhotoSwipe 27箇所実装済み
+- 構造化データ7種（Article + BreadcrumbList + Service + LocalBusiness + Organization + City + ListItem）
+- WebP 変換完了（20ファイル・94.4%削減）
+- FV B/A 屋外被写体統一済み（リフォーム外壁 → 軒天天吊り完成）
+- sitemap.xml / works/index.html / DEPLOY-STATUS.md 連携済み
+
+#### 唯一足りないもの
+
+`works/004/seo-audit/kunneppu-001-seo-audit-2026-06-24.md` の作成（works/002, 003 と同水準 99/100 目標）
+
+#### お願いしたいこと
+
+1. **SEO 監査レポート作成** — テンプレは `works/002/seo-audit/kitami-002-seo-audit-2026-06-21.md` と `works/003/seo-audit/kitami-003-seo-audit-2026-06-22.md` を参考
+2. **監査項目:**
+   - title / meta description / H1 / H2 階層
+   - **北見市エアコン取付 SEO 死守ルールへの影響評価**（最重要・上位1〜2位維持絶対条件）
+   - 共起語含有率（北見市・訓子府・エアコン・三菱・ズバ暖・軒天天吊り・リフォーム 等）
+   - alt 属性の説明性（北見市春光町形式に倣う）
+   - 構造化データの妥当性（リッチリザルトテスト合格レベル）
+   - 関連事例リンク（001, 002, 003）整合性
+   - PhotoSwipe ギャラリー動作
+   - sitemap.xml / works/index.html / DEPLOY-STATUS.md 連携最終確認
+
+3. **監査結果に応じた判断:**
+   - 99/100 合格 → 「FTPアップ OK」と報告 → ユーザーが帰宅後 FTP 実施
+   - 修正必要 → 箇所と修正案を提示 → ユーザー承認後に commit & push
+   - 最小改修方針（works/002, 003 と同水準に揃える、それ以上のリファクタはしない）
+
+#### 判断基準
+
+- SEO 上位（北見市エアコン取付1〜2位）絶対死守
+- 判断に迷ったら現状維持
+- ac-kitami 担当として既存資産（`.agents/skills/seo-audit/` 等）を活用
+- FTP アップは ac-kitami 担当が監査通過判定してから、**PC帰宅後にユーザー手動実施**（現在ユーザーは外出先 = 今日 FTP は不可）
+
+#### 環境前提（2026-06-24 時点）
+
+- ユーザー = 外出先（車内・iPad リモートデスクトップ + スマホ Claude `remote control` 経由）
+- Dropbox 同期 = 停止中
+- このため、ac-kitami 担当エンジニアの作業範囲は **「監査レポート作成」「微修正の提案 → commit & push」まで**。FTP アップロード自体は帰宅後にユーザー手動。
+
+#### 参考リンク
+
+- チーフエンジニア成果物詳細: `_engineer/NOW.md`「直近完了 (2026-06-23 PC 第 3 セッション)」セクション
+- 組織モデル v1: `_secretary/memory/reference_organization_model.md`（チーフ vs 担当エンジニアの切り分け）
+- v2 マスタープラン: `C:\Users\shishido\.claude\plans\swirling-stirring-dusk.md`
+- 写真フォルダ（不変アーカイブ）: `e:/Dropbox/apps/remotely-save/assets/photos/_inbox/エアコン写真素材/訓子府町/kunneppu-001_訓子府_小林様（ミツモア）/`
+
+---
 
 ### 2026-06-22 (5) works/003 を v2 仕様化（公開水準まで引き上げ）
 
