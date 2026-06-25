@@ -1,6 +1,79 @@
 ## セッション引き継ぎ
 
-最終更新: 2026-06-25（ac-kitami 担当エンジニアによる SEO 監査 + [要入力] 解決済み・FTP アップ待ち）
+最終更新: 2026-06-25（works/004 + 北見 001-003 FTP 公開完了・Search Console B-1〜B-3 完了・残タスク 5 件）
+
+### ⚠️ NOW.md 肥大化注意（591 → 600+ 行）
+
+CLAUDE.md セッション締めプロトコルの圧縮基準（500 行超 = 圧縮必須）を超過。次セッションで「直近 1 ヶ月より古い経緯を `LOG/` に切り出し → NOW.md を 150-200 行に圧縮」を実施推奨。
+
+### 2026-06-25 PC セッション完了事項
+
+#### works/004 内容修正と公開準備
+
+- `e41fad3` 施工日プライバシー配慮（`2025年11月9日` → `2025年11月`）+ 工期 `1日間` + 配管/配線の技術記述を正確化
+- `d5c92da` メタ情報 4 箇所（H3 + meta description + og:description + Article JSON-LD description）を本文と一貫化
+- `fdeed77` DEPLOY-STATUS.md に「案件 ID とパスの対応表」追記（命名規則の二重構造 = ページ URL は通し番号・画像フォルダは地域別 = を意図的に維持する方針を文書化）
+
+#### FTP 本番デプロイ（全項目完了）
+
+- `/js/photoswipe/` 新規フォルダ（3 ファイル）アップ済み
+- `/images/works/kunneppu/001/` 新規フォルダ（20 ファイル）アップ済み
+- `/images/works/kitami/001/002/003/` ローカル最新を上書きアップ済み（古いファイル削除はせず併存・無害）
+- `/works/` フォルダ一式（index.html + 001/002/003/004/）アップ済み
+- `/index.html` `/about/index.html` `/sitemap.xml` `/.htaccess` 上書きアップ済み
+
+#### 動作確認 OK
+
+- `https://ac-kitami.com/works/004/` 表示 OK・PhotoSwipe 動作 OK
+- `https://ac-kitami.com/works/` ハブカード 4 件 OK
+- `https://ac-kitami.com/kitami/works/001/` → `/works/001/` 301 リダイレクト動作 OK
+- `https://ac-kitami.com/sitemap.xml` /works/004/ 含む 15 件 OK
+
+#### Search Console 完了
+
+- B-1: サイトマップ再送信 OK（検出ページ数 15、正常処理）
+- B-2: URL 検査 + インデックス登録リクエスト 7 件完了（/works/004/, /works/001-003/, /works/, /, /about/）
+- B-3: robots.txt 確認 OK（4 変種全て取得済み・問題ゼロ）
+
+---
+
+### 🟡 残タスク（次回 PC 帰宅後）
+
+#### 優先度: 中
+
+1. **Search Console B-4: リッチリザルトテスト**
+   - URL: https://search.google.com/test/rich-results
+   - 対象: `https://ac-kitami.com/works/004/`
+   - 期待: Article 1 件 + パンくずリスト 1 件 + サービス 1 件、エラー警告ゼロ
+
+2. **Search Console B-5: PageSpeed Insights**
+   - URL: https://pagespeed.web.dev/
+   - 対象: `https://ac-kitami.com/works/004/` を中心にトップ・他事例ページも
+   - 目標: モバイル・PC ともにパフォーマンス 80 点以上、Core Web Vitals 全項目クリア
+
+#### 優先度: 低（任意・後回し可）
+
+3. **FTP 側の `/kitami/works/001/` フォルダ削除**
+   - `.htaccess` の 301 リダイレクトが動作確認済みなので、削除しなくても実害なし
+   - サーバー容量と将来の混乱回避のため、いずれ削除推奨
+
+4. **FTP 側に上がってしまった `_classification/` や `seo-audit/` フォルダの掃除**
+   - ユーザーが「全部アップ」したので、これらの除外フォルダも FTP に上がっている可能性
+   - 確認方法: FFFTP で `/images/works/kitami/001/_classification/`, `/works/002/seo-audit/` 等が存在するか
+   - あれば削除（公開不要・SEO 上もノイズ）
+
+5. **NOW.md 圧縮（500 行超 = 必須対応）**
+   - 直近 1 ヶ月より古い経緯を `LOG/YYYY-MM-DD.md` に切り出し
+   - NOW.md を 150-200 行に圧縮
+   - 既存前例: 2026-06-20 に `AC_Estimation_System/NOW.md` を 1461→137 行（コミット c4364ac）、`_secretary/NOW.md` を 601→50 行（コミット 896d6cf）
+
+---
+
+### 過去の引き継ぎ（参考・以下は履歴）
+
+---
+
+### 2026-06-25 [要入力] 2 箇所を実値で埋めた（commit 追加 push）
 
 ### 2026-06-25 [要入力] 2 箇所を実値で埋めた（commit 追加 push）
 

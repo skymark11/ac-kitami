@@ -12,10 +12,10 @@
 
 | 案件 ID | ページ URL | 画像フォルダ | 公開状態 |
 |---|---|---|---|
-| kitami-001 | `/works/001/` | `/images/works/kitami/001/` | 公開準備中 |
-| kitami-002 | `/works/002/` | `/images/works/kitami/002/` | 公開準備中 |
-| kitami-003 | `/works/003/` | `/images/works/kitami/003/` | 公開準備中 |
-| kunneppu-001 | `/works/004/` | `/images/works/kunneppu/001/` | 公開準備中 |
+| kitami-001 | `/works/001/` | `/images/works/kitami/001/` | FTP公開済み（2026-06-25）|
+| kitami-002 | `/works/002/` | `/images/works/kitami/002/` | FTP公開済み（2026-06-25）|
+| kitami-003 | `/works/003/` | `/images/works/kitami/003/` | FTP公開済み（2026-06-25）|
+| kunneppu-001 | `/works/004/` | `/images/works/kunneppu/001/` | FTP公開済み（2026-06-25）|
 
 ### 新規案件追加時のルール
 
@@ -31,29 +31,37 @@
 ---
 
 ## FTP公開済み
-- / (トップページ)
-- /about/
+- / (トップページ) - 2026-06-25 事例カード更新版に再アップ
+- /about/ - 2026-06-25 防虫キャップ削除版に再アップ
 - /abashiri/
 - /abashiri/works/ - 施工事例ハブ（2026-05-30公開）
 - /abashiri/works/001/ - 潮見アパート施工事例（2026-05-30公開）
 - /abashiri/works/002/ - 南窓用エアコン施工事例（2026-05-30公開）
-- /kitami/works/001/ - 北見市中央三輪 施工事例（2026-06-16公開・要注意：将来 /works/001/ への統合予定。301リダイレクト対応必要）
+- /kitami/works/001/ - 北見市中央三輪 施工事例（2026-06-16公開）→ **2026-06-25 に /works/001/ へ統合**。/.htaccess の 301 リダイレクト動作確認済み。サーバー側の旧フォルダ削除は任意（実害なし、いずれ削除推奨）
+- /works/ - 北見・近郊エリア 施工事例ハブ（2026-06-25公開・カード 4 件）
+- /works/001/ - 北見市中央三輪 施工事例（2026-06-25公開・v2 仕様・SEO 93点）
+- /works/002/ - 北見市相ノ内 施工事例（2026-06-25公開・v2 仕様・SEO 99/100・PhotoSwipe）
+- /works/003/ - 北見市春光町 市営団地 施工事例（2026-06-25公開・v2 仕様化済み・SEO 99/100）
+- /works/004/ - 訓子府町 小林様 軒天天吊り施工事例（2026-06-25公開・v2 仕様・三菱ズバ暖・リフォーム外壁無傷・SEO 99/100）
+- /images/works/kunneppu/001/ - kunneppu-001 用画像 20 ファイル（2026-06-25 新規アップ）
+- /images/works/kitami/001/002/003/ - 2026-06-25 ローカル最新を上書きアップ（旧ファイル併存・無害）
+- /js/photoswipe/ - PhotoSwipe v5 三点セット（2026-06-25 新規アップ）
+- /sitemap.xml - 2026-06-25 全 URL を最新化（/works/001-004/ 含む 15 件）
+- /.htaccess - 2026-06-25 301 リダイレクト追加（`/kitami/works/001/` → `/works/001/`）動作確認済み
 - /relocation/
 - /column/200v-aircon-check/
 - /column/aircon-2027-mondai/
 - /privacy-policy/
 
-## 公開準備中（今回FTPアップ予定）
-- /works/ - 北見・近郊エリア 施工事例ハブ（kunneppu-001 追加に伴いタイトル・H1・OGP・CollectionPage・カード一覧を更新）
-- /works/001/ - 北見市中央三輪 施工事例（kitami/works/001/ から統合・v2仕様・SEO最適化済み）
-- /works/002/ - 北見市相ノ内 施工事例（v2仕様・SEO 99/100・PhotoSwipe実装）
-- /works/003/ - 北見市春光町 市営団地 施工事例（旧 /works/004/ をリネーム・v1仕様のまま公開）
-- /works/004/ - 訓子府町 小林様 軒天天吊り施工事例（kunneppu-001・v2仕様・三菱ズバ暖・リフォーム外壁無傷・隠蔽配線）
-- /images/works/kunneppu/001/ - kunneppu-001 用画像 20ファイル（before-01〜03・process-01〜03・after-01〜04 / JPG+WebP）
-- / (トップページ) - 事例1/2/3 サムネ画像パス + 詳細リンク修正
-- /sitemap.xml - 全URLを最新化（/works/004/ 追加・/works/ lastmod を 2026-06-23 に更新）
-- /.htaccess - /kitami/works/001/ → /works/001/ の 301 リダイレクト追加（**必須**）
-- /about/index.html - 防虫キャップ削除（前回未反映）
+## 公開後のフォローアップタスク（次回 PC 帰宅後）
+
+| 優先 | タスク | URL/内容 |
+|---|---|---|
+| 中 | Search Console B-4: リッチリザルトテスト | https://search.google.com/test/rich-results で `/works/004/` |
+| 中 | Search Console B-5: PageSpeed Insights | https://pagespeed.web.dev/ で `/works/004/` 中心に |
+| 低 | FTP 側の `/kitami/works/001/` フォルダ削除 | 301 動作確認済みで実害なしだが、いずれ削除推奨 |
+| 低 | FTP 側の `_classification/` `seo-audit/` 等の掃除 | 全部アップした際に上がっている可能性。FFFTP で確認 → 削除 |
+| 低 | NOW.md 圧縮（500 行超） | 直近 1 ヶ月より古い経緯を `LOG/` に切り出し → 150-200 行に圧縮 |
 
 ## 未公開（作成中・別途対応）
 - /works/003/ の v2 仕様化（PhotoSwipe・semantic命名・SEO監査）は別タスク
