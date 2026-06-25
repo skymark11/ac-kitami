@@ -15,6 +15,7 @@ Thumbs.db
 # バックアップファイル
 *.bak
 *.bak.*
+NOW.md.backup-*
 
 # ビルドツール（FTPアップロード不要）
 node_modules/
