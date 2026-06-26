@@ -30,3 +30,9 @@ images/works/*/*/_classification/by_category/
 
 # 写真素材の生データ（Dropbox 同期で別途管理、Git 対象外）
 assets/photos/_inbox/
+
+# PSI API キー・一時スクリプト（絶対にコミットしない）
+seo-audit/.psi-key
+seo-audit/_psi_fetch.py
+seo-audit/_psi_results_*.json
+seo-audit/__pycache__/
