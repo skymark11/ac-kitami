@@ -38,6 +38,7 @@ argument-hint: <case-id> 例: kunneppu-001
 | kunneppu | 訓子府町 |
 | engaru | 遠軽町 |
 | tsubetsu | 津別町 |
+| koshimizu | 小清水町 |
 
 **連番ルール**: 市町村ごとに 001 から振る（市町村別に独立した連番）。
 
