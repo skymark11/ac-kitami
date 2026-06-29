@@ -1,6 +1,6 @@
 # デプロイ状況
 
-最終更新: 2026-06-25
+最終更新: 2026-06-29（kunneppu エリアページ Phase 1A 公開準備完了）
 
 ## 案件 ID とパスの対応表（命名規則）
 
@@ -16,6 +16,8 @@
 | kitami-002 | `/works/002/` | `/images/works/kitami/002/` | FTP公開済み（2026-06-25）|
 | kitami-003 | `/works/003/` | `/images/works/kitami/003/` | FTP公開済み（2026-06-25）|
 | kunneppu-001 | `/works/004/` | `/images/works/kunneppu/001/` | FTP公開済み（2026-06-25）|
+| bihoro-001 | `/bihoro/works/001/` | `/images/works/bihoro/001/` | ローカル完成・FTP 未公開 |
+| koshimizu-001 | `/koshimizu/works/001/` | `/images/works/koshimizu/001/` | ローカル完成・FTP 未公開（2 階室内機 After 写真未受領） |
 
 ### 新規案件追加時のルール
 
@@ -46,7 +48,7 @@
 - /images/works/kunneppu/001/ - kunneppu-001 用画像 20 ファイル（2026-06-25 新規アップ）
 - /images/works/kitami/001/002/003/ - 2026-06-25 ローカル最新を上書きアップ（旧ファイル併存・無害）
 - /js/photoswipe/ - PhotoSwipe v5 三点セット（2026-06-25 新規アップ）
-- /sitemap.xml - 2026-06-25 全 URL を最新化（/works/001-004/ 含む 15 件）
+- /sitemap.xml - 2026-06-25 全 URL を最新化（/works/001-004/ 含む 15 件）→ 2026-06-29 `/kunneppu/` 追加版を新規アップ予定
 - /.htaccess - 2026-06-25 301 リダイレクト追加（`/kitami/works/001/` → `/works/001/`）動作確認済み
 - /relocation/
 - /column/200v-aircon-check/
@@ -66,8 +68,29 @@
 ## 未公開（作成中・別途対応）
 - /works/003/ の v2 仕様化（PhotoSwipe・semantic命名・SEO監査）は別タスク
 - /monbetsu/ - 内容確定後にアップ
-- /bihoro/ - プレースホルダー。内容確定後にアップ
+- /bihoro/ - 内容確定済（works/001 + index 更新版）。FTP アップ待ち（2026-06-29 セッションで完成・別途公開判断）
+- /koshimizu/ - 内容確定済（補助金独自セクション含む）。FTP アップ待ち（2 階室内機 After 写真受領後の公開推奨）
 - /abashiri/works/003/ - 駒場入れ替え事例。画像はあるがページ未生成（works-case-builderスキルで生成予定）
+
+## 2026-06-29 公開予定（Phase 1A・kunneppu エリアページ）
+マーケターブリーフ `_marketer/briefs/2026-06-29_kunneppu-area-page-brief.md` に基づき、訓子府町専用エリアページを新規公開する。
+
+**FTP アップロード対象:**
+- `/kunneppu/index.html`（新規）
+- `/index.html`（対応エリア欄に kunneppu リンク追加 + フッター更新）
+- `/works/index.html`（/works/004/ カードに「訓子府町専用ページ」リンク追加 + フッター更新）
+- `/works/004/index.html`（関連事例セクション冒頭に /kunneppu/ への小さなリンク追加 ※それ以外は SEO 死守ライン遵守で一切触らず）
+- `/abashiri/index.html`（フッター対応エリアに訓子府リンク追加）
+- `/sitemap.xml`（`/kunneppu/` エントリ追加）
+
+**期待される SEO 効果（マーケターブリーフ準拠）:**
+- 2-4 週間後に「訓子府町 エアコン 取付」「訓子府町 エアコン 工事」「訓子府町 エアコン 業者」で #1〜3 想定
+- ライバル極小 KW（人口約 5,000 人の町・上位 SERP は全国系プラットフォームのみ）
+- 既存 `/works/004/`（SEO 99/100）と「網羅型 + 強い 1 次資料」のセット効果
+
+**死守ライン:**
+- `/works/004/` の URL・タイトル・本文・既存 H2・FAQ・JSON-LD は **一切変更しない**（関連事例セクション冒頭の最小リンク追加のみ）
+- 「北見市エアコン取付」「北見市エアコン」順位 1〜2 位維持絶対条件
 
 ## FTP不要（管理用ファイル）
 - /line/ - LINE公式アカウントの応答テンプレート（mdファイル）
